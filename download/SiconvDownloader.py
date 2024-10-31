@@ -13,11 +13,7 @@ class SiconvDownloader(BaseDownloader):
     def __init__(self, download_dir, final_dir):
         super().__init__(download_dir, final_dir)
 
-    
     def download(self):
-
-        self.setup_directories()
-
         options = webdriver.FirefoxOptions()
         options.set_preference("browser.download.folderList", 2)
         options.set_preference("browser.download.dir", self.download_dir)
@@ -34,24 +30,36 @@ class SiconvDownloader(BaseDownloader):
 
         zip_path = os.path.join(self.download_dir, "siconv.zip")
 
-        # Voltar pra antiga versão da verificação
-        while os.path.exists(zip_path) and not any(file.endswith('.part') or file.endswith('.crdownload') for file in os.listdir(self.download_dir)):
-                            
-            print("Aguardando o download do arquivo zip...")
-            time.sleep(15)
+        while True:
+            if os.path.exists(zip_path) and not any(file.endswith('.part') or file.endswith('.crdownload') for file in os.listdir(self.download_dir)):
+                print("Download concluído!")
+                break
+            else:
+                print("Aguardando o download do arquivo zip...")
+                time.sleep(15)
 
-        print("Download concluído!")
         driver.quit()
 
+        print("Chegou na zipagem")
+
         if os.path.exists(zip_path):
+            file_path = os.path.join(self.download_dir, "siconv.zip")
+            destination_path = os.path.join(self.final_dir, "siconv.zip")
             
-            shutil.move(zip_path, self.final_dir)
-            print("Arquivo movido para a pasta: ", self.final_dir)    
+            # Verifique se o arquivo já existe no destino e o exclua se necessário
+            if os.path.isfile(destination_path):
+                print("O arquivo siconv.zip já existe no destino. Removendo arquivo existente...")
+                os.remove(destination_path)
+
+            shutil.move(file_path, self.final_dir)
+            print("Arquivo movido para a pasta: ", self.final_dir)
+                
             moved_file_path = os.path.join(self.final_dir, "siconv.zip")
                 
             with zipfile.ZipFile(moved_file_path, 'r') as zip_ref:
                 print("Dezipando")
                 zip_ref.extractall(self.final_dir)
 
+            print("Deletando siconv.zip")
             os.remove(moved_file_path)
             print("Programa finalizado!")

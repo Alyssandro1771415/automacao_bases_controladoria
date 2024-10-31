@@ -54,8 +54,6 @@ class PortalConvenioDownloader(BaseDownloader):
                 print("Aguardando o download do arquivo zip...")
                 time.sleep(15)
 
-
-
     def extract_and_cleanup(self, zip_path, rename_to, delete_pattern):
             
         shutil.move(zip_path, self.final_dir)
