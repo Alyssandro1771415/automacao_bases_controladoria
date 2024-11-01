@@ -15,7 +15,7 @@ class OrcamentoDownloader(BaseDownloader):
         super().__init__(download_dir, final_dir)
 
     def download(self):
-        self.setup_directoriwa
+        self.setup_directories
 
         options = webdriver.FirefoxOptions()
         options.set_preference("browser.download.folderList", 2)
@@ -39,9 +39,14 @@ class OrcamentoDownloader(BaseDownloader):
             download_link.click()
             print("Download iniciado...")
             
-            while not os.path.exists(zip_path) and not any(file.endswith('.part') or file.endswith('.crdownload') for file in os.listdir(self.download_dir)):
-                print("Aguardando o download do arquivo zip...")
-                time.sleep(15)
+            while True:
+                if os.path.exists(zip_path) and not any(file.endswith('.part') or file.endswith('.crdownload') for file in os.listdir(self.download_dir)):
+                    print("Download concluído!")
+                    break
+                else:
+                    
+                    print("Aguardando o download do arquivo zip...")
+                    time.sleep(15)
         
         finally:
             driver.quit()
@@ -54,4 +59,4 @@ class OrcamentoDownloader(BaseDownloader):
                 zip_ref.extractall(self.final_dir)
                 
             os.remove(moved_file_path)
-            print("Arquivo de Or;amento Geral da União extraido e removido com sucesso!")
+            print("Arquivo de Orçamento Geral da União extraido e removido com sucesso!")

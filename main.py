@@ -12,8 +12,8 @@ def main():
     downloader_orcamento = OrcamentoDownloader(download_dir, os.path.join(final_dir, "OBRAS"))
 
     #downloader_siconv.download()
-    downloader_portal.download()
-    #downloader_orcamento.download()
+    #downloader_portal.download()
+    downloader_orcamento.download()
 
 if __name__ == "__main__":
     main()
