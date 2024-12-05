@@ -1,0 +1,285 @@
+2024-12-05 16:28:36,222 - INFO - Iniciando o processo de download do OGU - Caixa... 
+2024-12-05 16:28:36,223 - INFO - ====== WebDriver manager ====== 
+2024-12-05 16:28:39,333 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:28:39,640 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:28:39,867 - INFO - There is no [win64] geckodriver "v0.35.0" for browser firefox "133.0" in cache 
+2024-12-05 16:28:39,868 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:28:40,053 - INFO - Getting latest mozilla release info for v0.35.0 
+2024-12-05 16:28:40,434 - INFO - About to download new driver from https://github.com/mozilla/geckodriver/releases/download/v0.35.0/geckodriver-v0.35.0-win64.zip 
+2024-12-05 16:28:42,248 - INFO - Driver downloading response is 200 
+2024-12-05 16:28:45,803 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:28:46,055 - INFO - Driver has been saved in cache [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0] 
+2024-12-05 16:29:05,619 - INFO - Página de downloads acessada... 
+2024-12-05 16:29:10,906 - INFO - Botão de download clicado... 
+2024-12-05 16:29:13,978 - ERROR - Erro durante o download... 
+Traceback (most recent call last):
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\download\OrcamentoDownloader.py", line 70, in download
+    download_link.click()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: Element <a class="link-down bold" href="https://www.caixa.gov.br/Downloads/Orcamento-Geral-da-Uniao-Base-de-Dados/BD_Gestores_05_12_2024.zip"> could not be scrolled into view
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+ElementNotInteractableError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:353:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:167:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:327:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:207:31
+
+2024-12-05 16:29:16,930 - INFO - Navegador fechado... 
+2024-12-05 16:29:16,930 - WARNING - Tentativa 1 falhou. Realizando outra tentaiva em 60 segundos... 
+2024-12-05 16:30:16,932 - INFO - Iniciando o processo de download do OGU - Caixa... 
+2024-12-05 16:30:16,932 - INFO - ====== WebDriver manager ====== 
+2024-12-05 16:30:19,973 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:30:21,111 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:30:21,332 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0\geckodriver.exe] found in cache 
+2024-12-05 16:30:37,182 - INFO - Página de downloads acessada... 
+2024-12-05 16:30:42,440 - INFO - Botão de download clicado... 
+2024-12-05 16:30:45,459 - ERROR - Erro durante o download... 
+Traceback (most recent call last):
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\download\OrcamentoDownloader.py", line 70, in download
+    download_link.click()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: Element <a class="link-down bold" href="https://www.caixa.gov.br/Downloads/Orcamento-Geral-da-Uniao-Base-de-Dados/BD_Gestores_05_12_2024.zip"> is not clickable at point (254,316) because another element <h3 id="cookie-banner-title" class="adopt-c-egyYNa"> obscures it
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:337:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:177:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:327:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:207:31
+
+2024-12-05 16:30:48,235 - INFO - Navegador fechado... 
+2024-12-05 16:30:48,236 - WARNING - Tentativa 2 falhou. Realizando outra tentaiva em 60 segundos... 
+2024-12-05 16:31:48,237 - INFO - Iniciando o processo de download do OGU - Caixa... 
+2024-12-05 16:31:48,238 - INFO - ====== WebDriver manager ====== 
+2024-12-05 16:31:51,013 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:31:51,427 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:31:51,602 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0\geckodriver.exe] found in cache 
+2024-12-05 16:32:06,333 - INFO - Página de downloads acessada... 
+2024-12-05 16:32:11,597 - INFO - Botão de download clicado... 
+2024-12-05 16:32:14,636 - ERROR - Erro durante o download... 
+Traceback (most recent call last):
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\download\OrcamentoDownloader.py", line 70, in download
+    download_link.click()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: Element <a class="link-down bold" href="https://www.caixa.gov.br/Downloads/Orcamento-Geral-da-Uniao-Base-de-Dados/BD_Gestores_05_12_2024.zip"> is not clickable at point (254,471) because another element <button id="adopt-reject-all-button" class="adopt-c-kjbOXQ"> obscures it
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:337:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:177:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:327:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:207:31
+
+2024-12-05 16:32:17,541 - INFO - Navegador fechado... 
+2024-12-05 16:32:17,542 - WARNING - Tentativa 3 falhou. Realizando outra tentaiva em 60 segundos... 
+2024-12-05 16:33:17,543 - INFO - Iniciando o processo de download do OGU - Caixa... 
+2024-12-05 16:33:17,543 - INFO - ====== WebDriver manager ====== 
+2024-12-05 16:33:20,422 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:33:20,834 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:33:21,006 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0\geckodriver.exe] found in cache 
+2024-12-05 16:33:36,775 - INFO - Página de downloads acessada... 
+2024-12-05 16:33:42,027 - INFO - Botão de download clicado... 
+2024-12-05 16:33:45,078 - ERROR - Erro durante o download... 
+Traceback (most recent call last):
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\download\OrcamentoDownloader.py", line 70, in download
+    download_link.click()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: Element <a class="link-down bold" href="https://www.caixa.gov.br/Downloads/Orcamento-Geral-da-Uniao-Base-de-Dados/BD_Gestores_05_12_2024.zip"> is not clickable at point (254,473) because another element <button id="adopt-reject-all-button" class="adopt-c-kjbOXQ"> obscures it
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:337:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:177:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:327:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:207:31
+
+2024-12-05 16:33:47,969 - INFO - Navegador fechado... 
+2024-12-05 16:33:47,970 - WARNING - Tentativa 4 falhou. Realizando outra tentaiva em 60 segundos... 
+2024-12-05 16:34:47,970 - INFO - Iniciando o processo de download do OGU - Caixa... 
+2024-12-05 16:34:47,971 - INFO - ====== WebDriver manager ====== 
+2024-12-05 16:34:50,865 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:34:51,221 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:34:51,394 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0\geckodriver.exe] found in cache 
+2024-12-05 16:35:08,682 - INFO - Página de downloads acessada... 
+2024-12-05 16:35:13,949 - INFO - Botão de download clicado... 
+2024-12-05 16:35:16,964 - ERROR - Erro durante o download... 
+Traceback (most recent call last):
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\download\OrcamentoDownloader.py", line 70, in download
+    download_link.click()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: Element <a class="link-down bold" href="https://www.caixa.gov.br/Downloads/Orcamento-Geral-da-Uniao-Base-de-Dados/BD_Gestores_05_12_2024.zip"> is not clickable at point (254,316) because another element <h3 id="cookie-banner-title" class="adopt-c-egyYNa"> obscures it
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:337:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:177:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:327:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:207:31
+
+2024-12-05 16:35:19,797 - INFO - Navegador fechado... 
+2024-12-05 16:35:19,797 - ERROR - Todas as 5 falharam. Erro final: Message: Element <a class="link-down bold" href="https://www.caixa.gov.br/Downloads/Orcamento-Geral-da-Uniao-Base-de-Dados/BD_Gestores_05_12_2024.zip"> is not clickable at point (254,316) because another element <h3 id="cookie-banner-title" class="adopt-c-egyYNa"> obscures it
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:337:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:177:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:327:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:207:31
+ 
+2024-12-05 16:48:50,980 - INFO - Iniciando o processo de download do OGU - Caixa... 
+2024-12-05 16:48:50,981 - INFO - ====== WebDriver manager ====== 
+2024-12-05 16:48:53,963 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:48:54,422 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:48:54,634 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0\geckodriver.exe] found in cache 
+2024-12-05 16:49:10,635 - INFO - Página de downloads acessada... 
+2024-12-05 16:49:20,771 - INFO - O banner de cookies não foi encontrado ou já estava fechado.. 
+2024-12-05 16:49:26,085 - INFO - Botão de download clicado... 
+2024-12-05 16:49:34,854 - INFO - Download iniciado... 
+2024-12-05 16:49:34,872 - INFO - Aguardando o download do arquivo ZIP... 
+2024-12-05 16:49:49,873 - INFO - Aguardando o download do arquivo ZIP... 
+2024-12-05 16:50:04,874 - INFO - Aguardando o download do arquivo ZIP... 
+2024-12-05 16:50:19,875 - INFO - Aguardando o download do arquivo ZIP... 
+2024-12-05 16:50:34,876 - INFO - Aguardando o download do arquivo ZIP... 
+2024-12-05 16:50:49,878 - INFO - Aguardando o download do arquivo ZIP... 
+2024-12-05 16:51:04,879 - INFO - Aguardando o download do arquivo ZIP... 
+2024-12-05 16:51:19,881 - INFO - Aguardando o download do arquivo ZIP... 
+2024-12-05 16:51:34,882 - INFO - Aguardando o download do arquivo ZIP... 
+2024-12-05 16:51:49,883 - INFO - Aguardando o download do arquivo ZIP... 
+2024-12-05 16:52:04,884 - INFO - Aguardando o download do arquivo ZIP... 
+2024-12-05 16:52:19,885 - INFO - Download concluído... 
+2024-12-05 16:52:22,576 - INFO - Navegador fechado... 
+2024-12-05 16:52:22,584 - WARNING - Tentativa 1 falhou. Realizando outra tentaiva em 60 segundos... 
+2024-12-05 16:53:22,585 - INFO - Iniciando o processo de download do OGU - Caixa... 
+2024-12-05 16:53:22,586 - INFO - ====== WebDriver manager ====== 
+2024-12-05 16:53:29,579 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:53:29,807 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:53:29,999 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0\geckodriver.exe] found in cache 
+2024-12-05 16:53:44,544 - INFO - Página de downloads acessada... 
+2024-12-05 16:53:54,680 - INFO - O banner de cookies não foi encontrado ou já estava fechado.. 
+2024-12-05 16:53:59,955 - INFO - Botão de download clicado... 
+2024-12-05 16:54:02,985 - ERROR - Erro durante o download... 
+Traceback (most recent call last):
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\download\OrcamentoDownloader.py", line 86, in download
+    download_link.click()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: Element <a class="link-down bold" href="https://www.caixa.gov.br/Downloads/Orcamento-Geral-da-Uniao-Base-de-Dados/BD_Gestores_05_12_2024.zip"> is not clickable at point (254,316) because another element <h3 id="cookie-banner-title" class="adopt-c-egyYNa"> obscures it
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:337:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:177:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:327:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:207:31
+
+2024-12-05 16:54:05,875 - INFO - Navegador fechado... 
+2024-12-05 16:54:05,875 - WARNING - Tentativa 2 falhou. Realizando outra tentaiva em 60 segundos... 
+2024-12-05 16:55:05,875 - INFO - Iniciando o processo de download do OGU - Caixa... 
+2024-12-05 16:55:05,876 - INFO - ====== WebDriver manager ====== 
+2024-12-05 16:55:08,805 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:55:09,249 - INFO - Get LATEST geckodriver version for 133.0 firefox 
+2024-12-05 16:55:09,420 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0\geckodriver.exe] found in cache 
+2024-12-05 16:55:24,419 - INFO - Página de downloads acessada... 
+2024-12-05 16:55:34,542 - INFO - O banner de cookies não foi encontrado ou já estava fechado.. 
+2024-12-05 16:55:39,805 - INFO - Botão de download clicado... 
+2024-12-05 16:55:42,832 - ERROR - Erro durante o download... 
+Traceback (most recent call last):
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\download\OrcamentoDownloader.py", line 86, in download
+    download_link.click()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: Element <a class="link-down bold" href="https://www.caixa.gov.br/Downloads/Orcamento-Geral-da-Uniao-Base-de-Dados/BD_Gestores_05_12_2024.zip"> is not clickable at point (254,316) because another element <h3 id="cookie-banner-title" class="adopt-c-egyYNa"> obscures it
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:337:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:177:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:327:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:207:31
+
+2024-12-05 16:55:45,859 - INFO - Navegador fechado... 
+2024-12-05 16:55:45,859 - WARNING - Tentativa 3 falhou. Realizando outra tentaiva em 60 segundos... 
