@@ -58,15 +58,15 @@ class SiconvDownloader(BaseDownloader):
         driver = None
         try:
             options = webdriver.FirefoxOptions()
-            options.set_preference("browser.download.folderList", 2)
-            options.set_preference("browser.download.dir", self.download_dir)
-            options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/zip")
-            options.set_preference("pdfjs.disabled", True)
+            options.set_preference('browser.download.folderList', 2)
+            options.set_preference('browser.download.dir', self.download_dir)
+            options.set_preference('browser.helperApps.neverAsk.saveToDisk', 'application/zip')
+            options.set_preference('pdfjs.disabled', True)
 
             driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
             wait = WebDriverWait(driver, 30)
 
-            driver.get("https://repositorio.dados.gov.br/seges/detru/")
+            driver.get('https://repositorio.dados.gov.br/seges/detru/')
             logger.info('Página de download acessada...')
 
             try:
@@ -74,24 +74,24 @@ class SiconvDownloader(BaseDownloader):
                 download_link.click()
                 logger.info('Download iniciado...')
             except TimeoutException:
-                raise Exception("Tempo limite excedido ao esperar pelo link de download.")
+                raise Exception('Tempo limite excedido ao esperar pelo link de download.')
             except NoSuchElementException:
-                raise Exception("O link de download não foi encontrado na página.")
+                raise Exception('O link de download não foi encontrado na página.')
 
-            zip_path = os.path.join(self.download_dir, "siconv.zip")
+            zip_path = os.path.join(self.download_dir, 'siconv.zip')
 
             try:
                 download_wait = WebDriverWait(driver, 600)  # 10 minutos de espera
                 download_wait.until(lambda d: os.path.exists(zip_path) and not any(file.endswith('.part') or file.endswith('.crdownload') for file in os.listdir(self.download_dir)))
                 logger.info('Download concluído...')
             except TimeoutException:
-                raise Exception("Tempo limite excedido ao aguardar o download do arquivo.")
+                raise Exception('Tempo limite excedido ao aguardar o download do arquivo.')
 
         except WebDriverException as e:
-            logger.error(f"Erro ao inicializar ou usar o WebDriver: {str(e)}")
+            logger.error(f'Erro ao inicializar ou usar o WebDriver: {str(e)}')
             raise
         except Exception as e:
-            logger.error(f"Erro durante o processo de download: {str(e)}")
+            logger.error(f'Erro durante o processo de download: {str(e)}')
             raise
         finally:
             if driver:
@@ -102,46 +102,46 @@ class SiconvDownloader(BaseDownloader):
 
         try:
             if os.path.exists(zip_path):
-                destination_path = os.path.join(self.final_dir, "siconv.zip")
+                destination_path = os.path.join(self.final_dir, 'siconv.zip')
                 
                 if os.path.isfile(destination_path):
                     logger.info('O arquivo siconv.zip já existe no destino. Removendo arquivo existente...')
                     try:
                         os.remove(destination_path)
                     except PermissionError:
-                        raise Exception("Não foi possível remover o arquivo existente. Verifique as permissões.")
+                        raise Exception('Não foi possível remover o arquivo existente. Verifique as permissões.')
                     except OSError as e:
-                        raise Exception(f"Erro ao remover o arquivo existente: {str(e)}")
+                        raise Exception(f'Erro ao remover o arquivo existente: {str(e)}')
 
                 try:
                     shutil.move(zip_path, self.final_dir)
                     logger.info(f'Arquivo movido para a pasta: {self.final_dir}')
                 except shutil.Error as e:
-                    raise Exception(f"Erro ao mover o arquivo: {str(e)}")
+                    raise Exception(f'Erro ao mover o arquivo: {str(e)}')
                 
-                moved_file_path = os.path.join(self.final_dir, "siconv.zip")
+                moved_file_path = os.path.join(self.final_dir, 'siconv.zip')
                 
                 try:
                     with zipfile.ZipFile(moved_file_path, 'r') as zip_ref:
                         logger.info('Extraindo o zip...')
                         zip_ref.extractall(self.final_dir)
                 except zipfile.BadZipFile:
-                    raise Exception("O arquivo baixado não é um arquivo zip válido.")
+                    raise Exception('O arquivo baixado não é um arquivo zip válido.')
                 except PermissionError:
-                    raise Exception("Não foi possível extrair o arquivo. Verifique as permissões da pasta de destino.")
+                    raise Exception('Não foi possível extrair o arquivo. Verifique as permissões da pasta de destino.')
 
                 try:
                     logger.info('Deletando siconv.zip')
                     os.remove(moved_file_path)
                 except PermissionError:
-                    raise Exception("Não foi possível deletar o arquivo zip. Verifique as permissões.")
+                    raise Exception('Não foi possível deletar o arquivo zip. Verifique as permissões.')
                 except OSError as e:
-                    raise Exception(f"Erro ao deletar o arquivo zip: {str(e)}")
+                    raise Exception(f'Erro ao deletar o arquivo zip: {str(e)}')
 
                 logger.info('Programa finalizado com sucesso!')
             else:
-                raise FileNotFoundError(f"O arquivo zip não foi encontrado em {zip_path}")
+                raise FileNotFoundError(f'O arquivo zip não foi encontrado em {zip_path}')
 
         except Exception as e:
-            logger.error(f"Erro durante o processo de extração e movimentação: {str(e)}")
+            logger.error(f'Erro durante o processo de extração e movimentação: {str(e)}')
             raise
