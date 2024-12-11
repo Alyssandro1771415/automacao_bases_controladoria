@@ -1,6 +1,6 @@
 import os
 
-from download import PortalConvenioDownloader, OrcamentoDownloader, SiconvDownloader
+from download import PortalConvenioDownloader, OrcamentoDownloader, SiconvDownloader, PainelObras
 
 def main():
     download_dir = os.path.expanduser("~/Downloads")
@@ -10,10 +10,12 @@ def main():
     downloader_portal = PortalConvenioDownloader(download_dir, os.path.join(final_dir, "PORTAL"))
     downloader_siconv = SiconvDownloader(download_dir, os.path.join(final_dir, "SICONV"))
     downloader_orcamento = OrcamentoDownloader(download_dir, os.path.join(final_dir, "OBRAS"))
+    downloader_obras = PainelObras(download_dir, os.path.join(final_dir, "OBRAS"))
 
     downloader_siconv.download()
     downloader_portal.download()
     downloader_orcamento.download()
+    downloader_obras.download()
 
 if __name__ == "__main__":
     main()

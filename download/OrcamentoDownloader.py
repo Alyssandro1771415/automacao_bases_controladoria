@@ -44,7 +44,6 @@ class OrcamentoDownloader(BaseDownloader):
                     print("Download concluído!")
                     break
                 else:
-                    
                     print("Aguardando o download do arquivo zip...")
                     time.sleep(15)
         
