@@ -10,7 +10,6 @@ class BaseDownloader(ABC):
     def download(self):
         pass
     
-        
     def setup_directories(self):
         if not os.path.exists(self.final_dir):
             os.makedirs(self.final_dir)
