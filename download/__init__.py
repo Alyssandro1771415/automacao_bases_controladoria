@@ -3,3 +3,4 @@ from .PortalConvenioDownloader import PortalConvenioDownloader
 from .OrcamentoDownloader import OrcamentoDownloader
 from .SiconvDownloader import SiconvDownloader
 from .PainelObras import PainelObras
+from .PainelParlamentar import PainelParlamentar
