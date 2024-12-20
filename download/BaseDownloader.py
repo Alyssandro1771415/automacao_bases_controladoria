@@ -13,3 +13,10 @@ class BaseDownloader(ABC):
     def setup_directories(self):
         if not os.path.exists(self.final_dir):
             os.makedirs(self.final_dir)
+    
+    def clean_final_directory(self):
+        for file in os.listdir(self.final_dir):
+            file_path = os.path.join(self.final_dir, file)
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+                print(f"Arquivo '{file}' removido da pasta final.")

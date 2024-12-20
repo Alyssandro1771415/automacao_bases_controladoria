@@ -15,7 +15,7 @@ class OrcamentoDownloader(BaseDownloader):
         super().__init__(download_dir, final_dir)
 
     def download(self):
-        self.setup_directories
+        self.setup_directories()
 
         options = webdriver.FirefoxOptions()
         options.set_preference("browser.download.folderList", 2)
@@ -51,6 +51,8 @@ class OrcamentoDownloader(BaseDownloader):
             driver.quit()
 
         if os.path.exists(zip_path):
+            self.clean_final_directory()
+
             shutil.move(zip_path, self.final_dir)
             moved_file_path = os.path.join(self.final_dir, zip_file_name)
             
@@ -58,4 +60,4 @@ class OrcamentoDownloader(BaseDownloader):
                 zip_ref.extractall(self.final_dir)
                 
             os.remove(moved_file_path)
-            print("Arquivo de Orçamento Geral da União extraido e removido com sucesso!")
+            print("Arquivo de Orçamento Geral da União extraído e removido com sucesso!")

@@ -72,24 +72,24 @@ class PainelParlamentar(BaseDownloader):
 
             adm_publico_estadual.send_keys("Empresa")
             adm_publico_estadual.send_keys(Keys.RETURN)
-            time.sleep(7)
+            time.sleep(10)
             ok_button_natureza_juridica = driver.find_element(By.CSS_SELECTOR, '#actions-toolbar > div.njs-8934-Grid-root.njs-8934-Grid-container.njs-8934-Grid-item.njs-8934-Grid-wrap-xs-nowrap.actions-toolbar-default-actions.css-3cuy5k > div:nth-child(3) > button')
             ok_button_natureza_juridica.click()
             
             # Modalidade
             seletor_modaliade = driver.find_element(By.CSS_SELECTOR, '#gPGwwUJ_content > div > div')
             seletor_modaliade.click()
-            time.sleep(7)
+            time.sleep(10)
             modalidade = driver.find_element(By.CSS_SELECTOR, 'body > div.MuiPopover-root.listbox-popover.MuiModal-root.css-1nac088 > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1dmzujt > div > div > div.njs-8934-Grid-root.njs-8934-Grid-container.njs-8934-Grid-item.njs-8934-Grid-direction-xs-column.css-otmy2t > div.njs-8934-Grid-root.njs-8934-Grid-item.css-bb28t2 > div > input')
             modalidade_button = driver.find_element(By.CSS_SELECTOR, '#actions-toolbar > div:nth-child(1) > div > button')
             modalidade_button.click()
-            time.sleep(7)
+            time.sleep(10)
             all_modalidades = driver.find_element(By.CSS_SELECTOR, '#moreMenuList > li:nth-child(1)')
             all_modalidades.click()
-            time.sleep(7)
+            time.sleep(10)
             modalidade.send_keys('especial')
             modalidade.send_keys(Keys.RETURN)
-            time.sleep(7)
+            time.sleep(10)
             ok_button_modalidade = driver.find_element(By.CSS_SELECTOR, '#actions-toolbar > div.njs-8934-Grid-root.njs-8934-Grid-container.njs-8934-Grid-item.njs-8934-Grid-wrap-xs-nowrap.actions-toolbar-default-actions.css-3cuy5k > div:nth-child(3) > button')
             ok_button_modalidade.click()
             
@@ -115,6 +115,8 @@ class PainelParlamentar(BaseDownloader):
             # Renomeia o arquivo ao movê-lo para a pasta final
             new_filename = "Emendas.xlsx"  # Novo nome desejado para o arquivo
             final_path = os.path.join(self.final_dir, new_filename)
+
+            self.clean_final_directory()
 
             # Renomeia e move o arquivo
             os.rename(file_path, final_path)

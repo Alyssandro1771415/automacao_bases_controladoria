@@ -46,10 +46,7 @@ class SiconvDownloader(BaseDownloader):
             file_path = os.path.join(self.download_dir, "siconv.zip")
             destination_path = os.path.join(self.final_dir, "siconv.zip")
             
-            # Verifique se o arquivo já existe no destino e o exclua se necessário
-            if os.path.isfile(destination_path):
-                print("O arquivo siconv.zip já existe no destino. Removendo arquivo existente...")
-                os.remove(destination_path)
+            self.clean_final_directory()
 
             shutil.move(file_path, self.final_dir)
             print("Arquivo movido para a pasta: ", self.final_dir)

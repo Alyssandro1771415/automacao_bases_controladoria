@@ -66,9 +66,11 @@ class PainelObras(BaseDownloader):
                     time.sleep(5)
                     
             file_downloaded = pd.read_excel(file_path)
+            self.clean_final_directory()
             csv_path = os.path.join(self.final_dir, "Obras.csv")
             file_downloaded.to_csv(csv_path, sep=";", index=False)
-            
+            print(f"Novo arquivo salvo em: {csv_path}")
+
             os.remove(file_path)
 
         finally:

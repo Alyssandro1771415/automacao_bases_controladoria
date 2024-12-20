@@ -12,8 +12,8 @@ from .BaseDownloader import BaseDownloader
 
 class PortalConvenioDownloader(BaseDownloader):
     
-    def _init_(self, download_dir, final_dir):
-        super()._init_(download_dir, final_dir)
+    def __init__(self, download_dir, final_dir):
+        super().__init__(download_dir, final_dir)
         
 
     def download(self):
@@ -30,8 +30,6 @@ class PortalConvenioDownloader(BaseDownloader):
         driver.get("https://portaldatransparencia.gov.br/download-de-dados/convenios")
         time.sleep(5)
 
-        click_accept_cooks = driver.find_element(By.CSS_SELECTOR, "#accept-all-btn")
-        click_accept_cooks.click()
         download_link = driver.find_element(By.XPATH, "//div[@id='arquivo-unico']//a")
         download_link.click()
         print("Download iniciado...")
@@ -40,7 +38,7 @@ class PortalConvenioDownloader(BaseDownloader):
         zip_path = self.wait_for_download(zip_file_name, driver)
         
         if zip_path:
-            self.extract_and_cleanup(zip_path, "Convenios.csv", r"._Convenios_OrdensBancarias", r"._Convenios.csv")
+            self.extract_and_cleanup(zip_path, "Convenios.csv", r".*_Convenios_OrdensBancarias", r".*_Convenios.csv")
         
         
     def wait_for_download(self, zip_file_name, driver):
