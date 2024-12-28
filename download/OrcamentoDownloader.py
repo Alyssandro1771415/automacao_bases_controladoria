@@ -42,6 +42,7 @@ class OrcamentoDownloader(BaseDownloader):
             while True:
                 if os.path.exists(zip_path) and not any(file.endswith('.part') or file.endswith('.crdownload') for file in os.listdir(self.download_dir)):
                     print("Download concluído!")
+                    self.clean_final_directory()
                     break
                 else:
                     print("Aguardando o download do arquivo zip...")
