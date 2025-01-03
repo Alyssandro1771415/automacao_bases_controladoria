@@ -164,15 +164,22 @@ class PainelParlamentar(BaseDownloader):
                     
                     if len(elementos_a_selecionar) == 0:
                         break
-
-            
+     
             ok_button_modalidade = driver.find_element(By.CSS_SELECTOR, '#actions-toolbar > div.njs-8934-Grid-root.njs-8934-Grid-container.njs-8934-Grid-item.njs-8934-Grid-wrap-xs-nowrap.actions-toolbar-default-actions.css-3cuy5k > div:nth-child(3) > button')
             ok_button_modalidade.click()
             
-            time.sleep(20)
+            xpath_table_elemento =  '//*[@id="myTabContent"]'
+            html_table_before = self._get_element_html(driver, xpath_table_elemento)
             
             initial_files = set(os.listdir(self.download_dir))
             start_time = time.time()
+            
+            html_table_after = self._get_element_html(driver, xpath_table_elemento)
+            
+            while self._compare_element_html(html_table_before, html_table_after) == True:
+                print("Aguardando preparação do arquivo...")
+                html_table_after = self._get_element_html(driver, xpath_table_elemento)    
+                time.sleep(5)
             
             download_database_button = driver.find_element(By.CSS_SELECTOR, '#btn-export-tbl-ciente > span')
             download_database_button.click()
