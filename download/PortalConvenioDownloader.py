@@ -4,6 +4,8 @@ import zipfile
 import shutil
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.service import Service
 from webdriver_manager.firefox import GeckoDriverManager
 import re
@@ -28,7 +30,10 @@ class PortalConvenioDownloader(BaseDownloader):
 
         driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
         driver.get("https://portaldatransparencia.gov.br/download-de-dados/convenios")
-        time.sleep(5)
+
+        WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.XPATH, "//div[@id='arquivo-unico']//a"))
+        )
 
         click_accept_cookies = driver.find_element(By.CSS_SELECTOR, "#accept-all-btn")
         click_accept_cookies.click()
