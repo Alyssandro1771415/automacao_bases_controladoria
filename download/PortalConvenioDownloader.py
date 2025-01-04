@@ -30,6 +30,8 @@ class PortalConvenioDownloader(BaseDownloader):
         driver.get("https://portaldatransparencia.gov.br/download-de-dados/convenios")
         time.sleep(5)
 
+        click_accept_cookies = driver.find_element(By.CSS_SELECTOR, "#accept-all-btn")
+        click_accept_cookies.click()
         download_link = driver.find_element(By.XPATH, "//div[@id='arquivo-unico']//a")
         download_link.click()
         print("Download iniciado...")
