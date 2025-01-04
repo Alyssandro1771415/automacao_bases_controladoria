@@ -4,6 +4,8 @@ import zipfile
 import shutil
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.service import Service
 from webdriver_manager.firefox import GeckoDriverManager
 import datetime
@@ -25,7 +27,13 @@ class OrcamentoDownloader(BaseDownloader):
 
         driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
         driver.get("https://www.caixa.gov.br/site/paginas/downloads.aspx")
-        time.sleep(5)
+
+        WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.XPATH, '//*[@id="adopt-accept-all-button"]'))
+        )
+        
+        accept_all_cookies = driver.find_element(By.XPATH, '//*[@id="adopt-accept-all-button"]')
+        accept_all_cookies.click()
 
         zip_file_name = f"BD_Gestores_{datetime.date.today().strftime('%d_%m_%Y')}.zip"
         zip_path = os.path.join(self.download_dir, zip_file_name)
