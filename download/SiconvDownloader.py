@@ -12,6 +12,21 @@ class SiconvDownloader(BaseDownloader):
     
     def __init__(self, download_dir, final_dir):
         super().__init__(download_dir, final_dir)
+        
+    def _wait_for_download_to_complete(self, initial_files):
+        while True:
+            current_files = set(os.listdir(self.download_dir))
+            new_files = current_files - initial_files
+            
+            if new_files:
+                downloaded_file = new_files.pop()
+                
+                if not downloaded_file.endswith('.part') or downloaded_file.endswith('.crdownload'):
+                    return downloaded_file
+                else:
+                    print(f"Aguardando conclusão do download: {downloaded_file}")
+            
+            time.sleep(5)
 
     def download(self):
         options = webdriver.FirefoxOptions()
@@ -22,7 +37,10 @@ class SiconvDownloader(BaseDownloader):
 
         driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
         driver.get("https://repositorio.dados.gov.br/seges/detru/")
-        time.sleep(5)
+        time.sleep(10)
+        
+        initial_files = set(os.listdir(self.download_dir))
+
 
         download_link = driver.find_element(By.XPATH, '/html/body/pre/a[7]')
         download_link.click()
@@ -30,21 +48,16 @@ class SiconvDownloader(BaseDownloader):
 
         zip_path = os.path.join(self.download_dir, "siconv.zip")
 
-        while True:
-            if os.path.exists(zip_path) and not any(file.endswith('.part') or file.endswith('.crdownload') for file in os.listdir(self.download_dir)):
-                print("Download concluído!")
-                break
-            else:
-                print("Aguardando o download do arquivo zip...")
-                time.sleep(15)
+        time.sleep(5)
+        downloaded_file = self._wait_for_download_to_complete(initial_files=initial_files)
+        print(f"Arquivo detectado: {downloaded_file}")
 
         driver.quit()
 
-        print("Chegou na zipagem")
+        print("Chegou na dezipagem")
 
         if os.path.exists(zip_path):
             file_path = os.path.join(self.download_dir, "siconv.zip")
-            destination_path = os.path.join(self.final_dir, "siconv.zip")
             
             self.clean_final_directory()
 
