@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.firefox import GeckoDriverManager
 from .BaseDownloader import BaseDownloader
 from selenium.webdriver.common.keys import Keys
@@ -22,16 +23,20 @@ class PainelParlamentar(BaseDownloader):
         files_with_paths = [os.path.join(self.download_dir, f) for f in files]
         return max(files_with_paths, key=os.path.getctime)
 
-    def _wait_for_download_to_start(self, initial_files, start_time,timeout=30):
-
-        while time.time() - start_time < timeout:
+    def _wait_for_download_to_complete(self, initial_files):
+        while True:
             current_files = set(os.listdir(self.download_dir))
             new_files = current_files - initial_files
+            
             if new_files:
-                return new_files.pop()
-            time.sleep(1)
-
-        raise TimeoutError("Nenhum novo arquivo detectado no tempo limite.")
+                downloaded_file = new_files.pop()
+                
+                if not downloaded_file.endswith('.part'):
+                    return downloaded_file
+                else:
+                    print(f"Aguardando conclusão do download: {downloaded_file}")
+            
+            time.sleep(5)
     
     def _get_element_html(self, driver, xpath: str) -> str:
         """
@@ -172,7 +177,6 @@ class PainelParlamentar(BaseDownloader):
             html_table_before = self._get_element_html(driver, xpath_table_elemento)
             
             initial_files = set(os.listdir(self.download_dir))
-            start_time = time.time()
             
             html_table_after = self._get_element_html(driver, xpath_table_elemento)
             
@@ -187,7 +191,7 @@ class PainelParlamentar(BaseDownloader):
 
             # Aguarda o download começar e concluir
             time.sleep(5)
-            downloaded_file = self._wait_for_download_to_start(initial_files=initial_files, start_time=start_time)
+            downloaded_file = self._wait_for_download_to_complete(initial_files=initial_files)
             print(f"Arquivo detectado: {downloaded_file}")
 
             file_path = os.path.join(self.download_dir, downloaded_file)

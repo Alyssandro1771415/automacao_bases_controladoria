@@ -12,23 +12,21 @@ class PainelObras(BaseDownloader):
     def __init__(self, download_dir, final_dir):
         super().__init__(download_dir, final_dir)
 
-    def _get_latest_file(self):
-        files = os.listdir(self.download_dir)
-        if not files:
-            return None
-        files_with_paths = [os.path.join(self.download_dir, f) for f in files]
-        return max(files_with_paths, key=os.path.getctime)
-
-    def _wait_for_download_to_start(self, initial_files, start_time,timeout=30):
-
-        while time.time() - start_time < timeout:
+    def _wait_for_download_to_complete(self, initial_files):
+        while True:
             current_files = set(os.listdir(self.download_dir))
             new_files = current_files - initial_files
+            
             if new_files:
-                return new_files.pop()
+                downloaded_file = new_files.pop()
+                
+                if not downloaded_file.endswith('.part'):
+                    return downloaded_file
+                else:
+                    print(f"Aguardando conclusão do download: {downloaded_file}")
+            
             time.sleep(5)
 
-        raise TimeoutError("Nenhum novo arquivo detectado no tempo limite.")
 
     def download(self):
         self.setup_directories()
@@ -41,7 +39,7 @@ class PainelObras(BaseDownloader):
 
         driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
         driver.get("https://clusterqap2.economia.gov.br/extensions/painel-obras/painel-obras.html")
-        time.sleep(10)
+        time.sleep(15)
 
         try:
             uf_element = driver.find_element(By.CSS_SELECTOR, 'text[data-label="PE"]')
@@ -50,11 +48,10 @@ class PainelObras(BaseDownloader):
             download_button = driver.find_element(By.XPATH, '//*[@id="btn-export-tbl-detalhes-obras"]')
             
             initial_files = set(os.listdir(self.download_dir))
-            start_time = time.time()
             download_button.click()
             print("Download iniciado...")
 
-            downloaded_file = self._wait_for_download_to_start(initial_files=initial_files, start_time=start_time)
+            downloaded_file = self._wait_for_download_to_complete(initial_files=initial_files)
             print(f"Arquivo detectado: {downloaded_file}")
 
             file_path = os.path.join(self.download_dir, downloaded_file)
