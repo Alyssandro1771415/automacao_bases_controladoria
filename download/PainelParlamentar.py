@@ -189,27 +189,17 @@ class PainelParlamentar(BaseDownloader):
             download_database_button.click()
             print("Download iniciado...")
 
-            # Aguarda o download começar e concluir
             time.sleep(5)
             downloaded_file = self._wait_for_download_to_complete(initial_files=initial_files)
             print(f"Arquivo detectado: {downloaded_file}")
 
             file_path = os.path.join(self.download_dir, downloaded_file)
-            while True:
-                if not downloaded_file.endswith(('.part', '.crdownload')) and os.path.exists(file_path):
-                    print(f"Download concluído! Arquivo: {file_path}")
-                    break
-                else:
-                    print("Aguardando conclusão do download...")
-                    time.sleep(5)
 
-            # Renomeia o arquivo ao movê-lo para a pasta final
-            new_filename = "Emendas.xlsx"  # Novo nome desejado para o arquivo
+            new_filename = "Emendas.xlsx"
             final_path = os.path.join(self.final_dir, new_filename)
 
             self.clean_final_directory()
 
-            # Renomeia e move o arquivo
             os.rename(file_path, final_path)
             print(f"Arquivo renomeado para '{new_filename}' e movido para: {final_path}")
 
