@@ -41,7 +41,6 @@ class SiconvDownloader(BaseDownloader):
         
         initial_files = set(os.listdir(self.download_dir))
 
-
         download_link = driver.find_element(By.XPATH, '/html/body/pre/a[7]')
         download_link.click()
         print("Download iniciado...")

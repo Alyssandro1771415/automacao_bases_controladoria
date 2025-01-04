@@ -17,19 +17,33 @@ class OrcamentoDownloader(BaseDownloader):
         super().__init__(download_dir, final_dir)
         
     def _wait_for_download_to_complete(self, initial_files):
-        while True:
+        TEMPORARY_EXTENSIONS = ['.part', '.crdownload']
+        IN_PROGRESS = True
+
+        while IN_PROGRESS:
             current_files = set(os.listdir(self.download_dir))
             new_files = current_files - initial_files
-            
+
             if new_files:
                 downloaded_file = new_files.pop()
-                
-                if not downloaded_file.endswith('.part'):
-                    return downloaded_file
+                file_path = os.path.join(self.download_dir, downloaded_file)
+
+                if not any(downloaded_file.endswith(ext) for ext in TEMPORARY_EXTENSIONS):
+                    IN_PROGRESS = False
+                    last_size = -1
+                    while True:
+                        current_size = os.path.getsize(file_path)
+                        if current_size == last_size:
+                            return downloaded_file
+                        last_size = current_size
+                        time.sleep(2)
                 else:
                     print(f"Aguardando conclusão do download: {downloaded_file}")
-            
+            else:
+                print("Nenhum arquivo novo detectado. Continuando a monitorar...")
+
             time.sleep(5)
+
 
     def download(self):
         self.setup_directories()
