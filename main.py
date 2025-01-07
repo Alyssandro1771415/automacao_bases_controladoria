@@ -15,12 +15,11 @@ def main():
     downloader_obras = PainelObras(download_dir, os.path.join(final_dir, "OBRAS"))
     download_parlamentar = PainelParlamentar(download_dir, os.path.join(final_dir, "EMENDAS"))
 
-    for i in range(10):
-        #downloader_siconv.download()
-        downloader_portal.download()
-        downloader_orcamento.download()
-        downloader_obras.download()
-        download_parlamentar.download()
+    downloader_siconv.download()
+    downloader_portal.download()
+    downloader_orcamento.download()
+    downloader_obras.download()
+    download_parlamentar.download()
         
 
 if __name__ == "__main__":
