@@ -72,13 +72,20 @@ class SiconvDownloader(BaseDownloader):
             downloaded_files = self._wait_for_download_to_complete(initial_files=initial_files)
             print(f"Arquivos detectados: {downloaded_files}")
 
+        except TimeoutError as e:
+            print(f"Erro: {e}. Reiniciando o download...")
+            driver.quit()  # Fecha o navegador para liberar recursos
+            self.download()  # Reinicia o processo de download
+            return
+
         except Exception as e:
             print(f"Erro durante o download: {e}")
             driver.quit()
             return
 
         finally:
-            driver.quit()
+            if driver:
+                driver.quit()
 
         print("Chegou na dezipagem")
 
