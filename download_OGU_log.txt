@@ -283,6 +283,7 @@ receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild
 
 2024-12-05 16:55:45,859 - INFO - Navegador fechado... 
 2024-12-05 16:55:45,859 - WARNING - Tentativa 3 falhou. Realizando outra tentaiva em 60 segundos... 
+<<<<<<< HEAD
 2024-12-06 13:57:01,944 - INFO - Iniciando o processo de download do OGU - Caixa... 
 2024-12-06 13:57:01,945 - INFO - ====== WebDriver manager ====== 
 2024-12-06 13:57:03,184 - INFO - Get LATEST geckodriver version for 125.0 firefox 
@@ -313,10 +314,33 @@ Traceback (most recent call last):
   File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
     raise exception_class(message, screen, stacktrace)
 selenium.common.exceptions.ElementClickInterceptedException: Message: Element <a class="link-down bold" href="https://www.caixa.gov.br/Downloads/Orcamento-Geral-da-Uniao-Base-de-Dados/BD_Gestores_06_12_2024.zip"> is not clickable at point (254,744) because another element <button id="adopt-reject-all-button" class="adopt-c-kjbOXQ"> obscures it
+=======
+2024-12-09 14:24:18,529 - INFO - Iniciando o processo de download e busca - OGU..
+2024-12-09 14:24:18,530 - INFO - ====== WebDriver manager ======
+2024-12-09 14:24:21,191 - INFO - Get LATEST geckodriver version for 133.0 firefox
+2024-12-09 14:24:21,657 - INFO - Get LATEST geckodriver version for 133.0 firefox
+2024-12-09 14:24:21,848 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0\geckodriver.exe] found in cache
+2024-12-09 14:24:38,582 - INFO - Página de download acessada..
+2024-12-09 14:24:39,557 - INFO - Botão de download clicado...
+2024-12-09 14:24:51,226 - INFO - Iniciando download de BD_Gestores_09_12_2024.zip...
+2024-12-09 14:29:00,665 - INFO - Download concluído...
+2024-12-09 14:29:03,196 - INFO - Navegador fechado...
+2024-12-09 14:29:03,224 - INFO - Arquivo zip movido para C:\Users\luccas.fernandes/Desktop/Bases_Paineis\OBRAS\BD_Gestores_09_12_2024.zip
+2024-12-09 14:29:05,384 - INFO - Arquivo zip extraído...
+2024-12-09 14:29:05,398 - INFO - Arquivo de Orçamento Geral da União extraído e removido com sucesso!
+2024-12-09 15:55:01,287 - INFO - Iniciando processo de download Portal Convênio...
+2024-12-09 15:55:01,288 - INFO - ====== WebDriver manager ======
+2024-12-09 15:55:04,566 - INFO - Get LATEST geckodriver version for 133.0 firefox
+2024-12-09 15:55:05,047 - INFO - Get LATEST geckodriver version for 133.0 firefox
+2024-12-09 15:55:05,333 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0\geckodriver.exe] found in cache
+2024-12-09 15:56:42,991 - INFO - Página de download acessada...
+2024-12-09 15:56:43,134 - ERROR - Erro do WebDriver: Message: Element <a class="br-button primary" href="/download-de-dados/convenios/20241122" type="button"> is not clickable at point (131,481) because another element <p id="cookiebar-modal-footer-text" class="info-text col text-justify"> obscures it
+>>>>>>> a17ff01bca45060ae3ff4aa56f0626dd16d3b962
 Stacktrace:
 RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
 WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
 ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:337:5
+<<<<<<< HEAD
 webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
 interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
 clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
@@ -349,10 +373,26 @@ Traceback (most recent call last):
   File "C:\Users\luccas.fernandes\Desktop\programacao\automacao_bases_controladoria\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
     raise exception_class(message, screen, stacktrace)
 selenium.common.exceptions.ElementClickInterceptedException: Message: Element <a class="link-down bold" href="https://www.caixa.gov.br/Downloads/Orcamento-Geral-da-Uniao-Base-de-Dados/BD_Gestores_06_12_2024.zip"> is not clickable at point (254,575) because another element <div class="adopt-c-bXGRNs"> obscures it
+=======
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:177:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:327:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:207:31
+
+2024-12-09 15:56:45,979 - INFO - Navegador fechado.
+2024-12-09 16:01:27,955 - INFO - Iniciando processo de download Portal Convênio...
+2024-12-09 16:01:27,955 - INFO - ====== WebDriver manager ======
+2024-12-09 16:01:31,069 - INFO - Get LATEST geckodriver version for 133.0 firefox
+2024-12-09 16:01:31,370 - INFO - Get LATEST geckodriver version for 133.0 firefox
+2024-12-09 16:01:31,567 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0\geckodriver.exe] found in cache
+2024-12-09 16:03:09,083 - INFO - Página de download acessada...
+2024-12-09 16:03:09,153 - ERROR - Erro do WebDriver: Message: Element <a class="br-button primary" href="/download-de-dados/convenios/20241122" type="button"> is not clickable at point (131,481) because another element <p id="cookiebar-modal-footer-text" class="info-text col text-justify"> obscures it
+>>>>>>> a17ff01bca45060ae3ff4aa56f0626dd16d3b962
 Stacktrace:
 RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
 WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
 ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:337:5
+<<<<<<< HEAD
 webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:176:11
 interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
 clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
@@ -779,3 +819,33 @@ receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild
 2024-12-06 16:04:51,068 - INFO - Aguardando o download do arquivo ZIP... 
 2024-12-06 16:05:06,069 - INFO - Aguardando o download do arquivo ZIP... 
 2024-12-06 16:05:21,070 - INFO - Aguardando o download do arquivo ZIP... 
+=======
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:177:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:136:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:327:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:207:31
+
+2024-12-09 16:03:11,937 - INFO - Navegador fechado.
+2024-12-09 16:23:30,555 - INFO - Iniciando processo de download Portal Convênio...
+2024-12-09 16:23:30,562 - INFO - ====== WebDriver manager ======
+2024-12-09 16:23:33,472 - INFO - Get LATEST geckodriver version for 133.0 firefox
+2024-12-09 16:23:33,972 - INFO - Get LATEST geckodriver version for 133.0 firefox
+2024-12-09 16:23:34,157 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.35.0\geckodriver.exe] found in cache
+2024-12-09 16:25:17,150 - INFO - Página de download acessada...
+2024-12-09 16:25:22,773 - INFO - Download Iniciado...
+2024-12-09 16:25:22,774 - INFO - Aguardando o download do arquivo zip...
+2024-12-09 16:25:37,775 - INFO - Aguardando o download do arquivo zip...
+2024-12-09 16:25:52,776 - INFO - Aguardando o download do arquivo zip...
+2024-12-09 16:26:07,778 - INFO - Aguardando o download do arquivo zip...
+2024-12-09 16:26:22,780 - INFO - Aguardando o download do arquivo zip...
+2024-12-09 16:26:37,781 - INFO - Aguardando o download do arquivo zip...
+2024-12-09 16:26:52,783 - INFO - Aguardando o download do arquivo zip...
+2024-12-09 16:27:07,786 - INFO - Download concluído...
+2024-12-09 16:27:07,854 - INFO - Arquivo movido para a pasta: C:\Users\luccas.fernandes/Desktop/Bases_Paineis\PORTAL
+2024-12-09 16:27:07,891 - INFO - Extraindo o zip...
+2024-12-09 16:27:11,474 - INFO - Deletando .zip
+2024-12-09 16:27:11,486 - INFO - Arquivos encontrados - Para deletar: 20241122_Convenios_OrdensBancarias.csv, Para renomear: 20241122_Convenios.csv
+2024-12-09 16:27:11,501 - INFO - Arquivo "20241122_Convenios_OrdensBancarias.csv" deletado com sucesso!
+2024-12-09 16:27:11,502 - INFO - Arquivo "20241122_Convenios.csv" renomeado com sucesso para "Convenios.csv"!
+2024-12-09 16:27:13,991 - INFO - Navegador fechado.
+>>>>>>> a17ff01bca45060ae3ff4aa56f0626dd16d3b962

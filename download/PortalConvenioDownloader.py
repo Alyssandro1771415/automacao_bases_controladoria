@@ -11,9 +11,21 @@ class PortalConvenioDownloader(BaseDownloader):
         super().__init__(download_dir, final_dir)
         
     @BaseDownloader.retry(max_attempts=3, delay=60)
+<<<<<<< HEAD
     def download(self, browser="firefox"):
         self.setup_directories()
         self.logger.info(f'Iniciando processo de download Portal Convênio com {browser}...')
+=======
+    def download(self):
+        self.setup_directories()
+        self.logger.info('Iniciando processo de download Portal Convênio...')
+
+        options = webdriver.FirefoxOptions()
+        options.set_preference("browser.download.folderList", 2)
+        options.set_preference("browser.download.dir", self.download_dir)
+        options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/zip")
+        options.set_preference("pdfjs.disabled", True)
+>>>>>>> a17ff01bca45060ae3ff4aa56f0626dd16d3b962
 
         driver = None
         try:
