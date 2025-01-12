@@ -16,34 +16,16 @@ class SiconvDownloader(BaseDownloader):
         return os.path.exists(zip_path) and not any(file.endswith('.part') or file.endswith('.crdownload') for file in os.listdir(os.path.dirname(zip_path)))
 
     @BaseDownloader.retry(max_attempts=3, delay=60)
-<<<<<<< HEAD
     def download(self, browser="firefox"):
         self.logger.info(f'Iniciando o processo de download Sinconv com {browser}...')
-=======
-    def download(self):
-        self.logger.info('Iniciando o processo de download Sinconv...')
->>>>>>> a17ff01bca45060ae3ff4aa56f0626dd16d3b962
         self.logger.info(f"Diretório de download: {self.download_dir}")
         self.logger.info(f"Diretório final: {self.final_dir}")
 
         self.setup_directories()
-<<<<<<< HEAD
 
         driver = None
         try:
             driver = self.get_driver(browser)
-=======
-
-        options = webdriver.FirefoxOptions()
-        options.set_preference('browser.download.folderList', 2)
-        options.set_preference('browser.download.dir', self.download_dir)
-        options.set_preference('browser.helperApps.neverAsk.saveToDisk', 'application/zip')
-        options.set_preference('pdfjs.disabled', True)
-
-        driver = None
-        try:
-            driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
->>>>>>> a17ff01bca45060ae3ff4aa56f0626dd16d3b962
             wait = WebDriverWait(driver, 60)
 
             self.logger.info('Acessando a página de download...')

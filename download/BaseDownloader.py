@@ -7,7 +7,6 @@ import glob
 import re
 import zipfile
 import shutil
-<<<<<<< HEAD
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.edge.service import Service as EdgeService
@@ -15,8 +14,6 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from webdriver_manager.chrome import ChromeDriverManager
-=======
->>>>>>> a17ff01bca45060ae3ff4aa56f0626dd16d3b962
 
 class BaseDownloader(ABC):
     
@@ -43,7 +40,6 @@ class BaseDownloader(ABC):
     def retry(max_attempts=3, delay=60):
         def decorator(func):
             @wraps(func)
-<<<<<<< HEAD
             def wrapper(self, *args, browser="firefox", **kwargs):
                 browsers = ["firefox", "edge", "chrome"]
                 for current_browser in browsers:
@@ -65,23 +61,6 @@ class BaseDownloader(ABC):
                                     raise
                             self.logger.info(f'Tentando novamente com {current_browser} em {delay} segundos...')
                             time.sleep(delay)
-=======
-            def wrapper(self, *args, **kwargs):
-                attempts = 0
-                while attempts < max_attempts:
-                    try:
-                        return func(self, *args, **kwargs)
-                    except Exception as e:
-                        attempts += 1
-                        error_message = f'Tentativa {attempts} falhou. Erro: {type(e).__name__}: {str(e)}'
-                        self.log_error(error_message)
-                        if attempts == max_attempts:
-                            final_error = f'Todas as {max_attempts} tentativas falharam. Erro final: {type(e).__name__}: {str(e)}'
-                            self.log_error(final_error)
-                            raise
-                        self.logger.info(f'Tentando novamente em {delay} segundos...')
-                        time.sleep(delay)
->>>>>>> a17ff01bca45060ae3ff4aa56f0626dd16d3b962
             return wrapper
         return decorator
     
@@ -124,11 +103,7 @@ class BaseDownloader(ABC):
         if not os.path.exists(self.final_dir):
             os.makedirs(self.final_dir)
 
-<<<<<<< HEAD
     def wait_for_download(self, zip_file_name, max_wait_time=600):
-=======
-    def wait_for_download(self, zip_file_name, max_wait_time=900):
->>>>>>> a17ff01bca45060ae3ff4aa56f0626dd16d3b962
         start_time = time.time()
 
         while time.time() - start_time < max_wait_time:
@@ -178,7 +153,6 @@ class BaseDownloader(ABC):
         except Exception as e:
             error_message = f"Erro durante a extração e limpeza: {type(e).__name__}: {str(e)}"
             self.log_error(error_message)
-<<<<<<< HEAD
             raise
 
     def check_directory_permissions(self, directory):
@@ -186,6 +160,3 @@ class BaseDownloader(ABC):
             error_message = f"Sem permissão de escrita no diretório: {directory}"
             self.log_error(error_message)
             raise PermissionError(error_message)
-=======
-            raise
->>>>>>> a17ff01bca45060ae3ff4aa56f0626dd16d3b962
