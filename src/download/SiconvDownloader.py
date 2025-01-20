@@ -57,6 +57,14 @@ class SiconvDownloader(BaseDownloader):
         options.set_preference("browser.download.dir", self.download_dir)
         options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/zip")
         options.set_preference("pdfjs.disabled", True)
+        options.set_preference("browser.download.manager.showAlertOnComplete", False)
+        options.set_preference("browser.download.manager.focusWhenStarting", False)
+        options.set_preference("browser.download.manager.showWhenStarting", False)
+        options.set_preference("browser.tabs.warnOnClose", False)
+        options.set_preference("browser.tabs.warnOnCloseOtherTabs", False)
+        options.set_preference("browser.tabs.warnOnOpen", False)
+        options.set_preference("browser.download.manager.quitBehavior", 2)
+
 
         driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
         driver.get("https://repositorio.dados.gov.br/seges/detru/")
@@ -74,8 +82,8 @@ class SiconvDownloader(BaseDownloader):
 
         except TimeoutError as e:
             print(f"Erro: {e}. Reiniciando o download...")
-            driver.quit()  # Fecha o navegador para liberar recursos
-            self.download()  # Reinicia o processo de download
+            driver.quit()
+            self.download()
             return
 
         except Exception as e:
