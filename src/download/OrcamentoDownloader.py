@@ -6,15 +6,14 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.firefox.service import Service
-from webdriver_manager.firefox import GeckoDriverManager
 import datetime
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from .BaseDownloader import BaseDownloader
 
 class OrcamentoDownloader(BaseDownloader):
 
-    def __init__(self, download_dir, final_dir):
-        super().__init__(download_dir, final_dir)
+    def __init__(self, geckoDriver,download_dir, final_dir):
+        super().__init__(geckoDriver, download_dir, final_dir)
         
     def _wait_for_download_to_complete(self, initial_files):
         TEMPORARY_EXTENSIONS = ['.part', '.crdownload']
@@ -37,7 +36,8 @@ class OrcamentoDownloader(BaseDownloader):
 
     def download(self):
         
-        print(f"\n\n\n\033[34;40m{'-'*10} Orçamento Geral da União {'-'*10}\033[0m\n\n\n")
+        title ="Orçamento Geral da União"
+        print(f"\n\n\n\033[37;40m{'-'*(60-(len(title)//2))} {title} {'-'*(60-(len(title)//2))}\033[0m\n\n\n")
         
         self.setup_directories()
 
@@ -46,18 +46,28 @@ class OrcamentoDownloader(BaseDownloader):
         options.set_preference("browser.download.dir", self.download_dir)
         options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/zip")
         options.set_preference("pdfjs.disabled", True)
+        options.add_argument("--headless") #
 
-        driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
+        driver = webdriver.Firefox(service=self.geckoDriver, options=options)
         driver.get("https://www.caixa.gov.br/site/paginas/downloads.aspx")
 
-        WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="adopt-accept-all-button"]'))
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, "//button[contains(@class, 'botao-categoria') and @data-categoria='944']"))
         )
         
-        accept_all_cookies = driver.find_element(By.XPATH, '//*[@id="adopt-accept-all-button"]')
-        accept_all_cookies.click()
-
         try:
+                        
+            try:
+                # Use By.XPATH para o XPath do botão
+                accept_all_cookies = WebDriverWait(driver, 10).until(
+                    EC.element_to_be_clickable((By.XPATH, '//*[@id="adopt-accept-all-button"]'))
+                )
+                accept_all_cookies.click()
+                print("Botão de aceitar cookies clicado com sucesso.")
+            except TimeoutException:
+                print("Botão de aceitar cookies não encontrado. Continuando...")
+            except NoSuchElementException:
+                print("Botão de aceitar cookies não existe. Continuando...")
             
             initial_files = set(os.listdir(self.download_dir))
             

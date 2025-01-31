@@ -3,9 +3,10 @@ import os
 
 class BaseDownloader(ABC):
     
-    def __init__(self, download_dir, final_dir) -> None:
+    def __init__(self, geckoDriver, download_dir, final_dir) -> None:
         self.download_dir = download_dir
         self.final_dir = final_dir
+        self.geckoDriver = geckoDriver
     
     def download(self):
         pass

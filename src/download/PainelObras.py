@@ -2,15 +2,15 @@ import os
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.service import Service
-from webdriver_manager.firefox import GeckoDriverManager
 from .BaseDownloader import BaseDownloader
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 
 class PainelObras(BaseDownloader):
     
-    def __init__(self, download_dir, final_dir):
-        super().__init__(download_dir, final_dir)
+    def __init__(self,geckoDriver,download_dir, final_dir):
+        super().__init__(geckoDriver, download_dir, final_dir)
 
     def _wait_for_download_to_complete(self, initial_files):
         while True:
@@ -30,7 +30,8 @@ class PainelObras(BaseDownloader):
 
     def download(self):
         
-        print(f"\n\n\n\033[33;40m{'-'*10} Painel de Obras - Pernanbuco {'-'*10}\033[0m\n\n\n")
+        title = "Painel de Obras - Pernanbuco"
+        print(f"\n\n\n\033[36;40m{'-'*(60-(len(title)//2))} {title} {'-'*(60-(len(title)//2))}\033[0m\n\n\n")
 
         self.setup_directories()
 
@@ -39,10 +40,14 @@ class PainelObras(BaseDownloader):
         options.set_preference("browser.download.dir", self.download_dir)
         options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/zip")
         options.set_preference("pdfjs.disabled", True)
+        options.add_argument("--headless") #
 
-        driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
-        driver.get("https://clusterqap2.economia.gov.br/extensions/painel-obras/painel-obras.html")
-        time.sleep(15)
+        driver = webdriver.Firefox(service=self.geckoDriver, options=options)
+        driver.get("https://qlik-publico.paineis.gov.br/extensions/obras/obras.html")
+        
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, 'text[data-label="PE"]'))
+        )
 
         try:
             uf_element = driver.find_element(By.CSS_SELECTOR, 'text[data-label="PE"]')
@@ -62,7 +67,7 @@ class PainelObras(BaseDownloader):
             file_downloaded = pd.read_excel(file_path)
             self.clean_final_directory()
             csv_path = os.path.join(self.final_dir, "Obras.csv")
-            file_downloaded.to_csv(csv_path, sep=";", index=False)
+            file_downloaded.to_csv(csv_path, sep=";", index=False, encoding="utf-8-sig")
             print(f"Novo arquivo salvo em: {csv_path}")
 
             os.remove(file_path)

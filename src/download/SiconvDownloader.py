@@ -1,17 +1,20 @@
 import os
+import re
 import time
 import zipfile
 import shutil
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.service import Service
-from webdriver_manager.firefox import GeckoDriverManager
 from .BaseDownloader import BaseDownloader
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 
 class SiconvDownloader(BaseDownloader):
 
-    def __init__(self, download_dir, final_dir):
-        super().__init__(download_dir, final_dir)
+    def __init__(self, geckoDriver, download_dir, final_dir):
+        super().__init__(geckoDriver, download_dir, final_dir)
 
     def _wait_for_download_to_complete(self, initial_files):
         TEMPORARY_EXTENSIONS = ['.part', '.crdownload']
@@ -48,12 +51,41 @@ class SiconvDownloader(BaseDownloader):
             time.sleep(5)
 
         return new_files
+    
+    def extract_and_cleanup(self, zip_path):
+        
+        for file in os.listdir(self.final_dir):
+            os.remove(os.path.join(self.final_dir, file))
+            
+        shutil.move(zip_path, self.final_dir)
+        print("Arquivo movido para a pasta: ", self.final_dir)
+        moved_file_path = os.path.join(self.final_dir, os.path.basename(zip_path))
+            
+        with zipfile.ZipFile(moved_file_path, 'r') as zip_ref:
+            print("Dezipando")
+            zip_ref.extractall(self.final_dir)
+                        
+        print("Deletando .zip")
+        os.remove(moved_file_path)
+        
+    def wait_for_element(driver, locator_value, timeout=100, poll_frequency=0.5):
+
+        try:
+            print(f"Aguardando elemento: {locator_value} com timeout de {timeout}s...")
+            element = WebDriverWait(driver, timeout, poll_frequency).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, locator_value))
+            )
+            print(f"Elemento encontrado: {locator_value}")
+            return element
+        except TimeoutException:
+            print(f"Elemento {locator_value} não encontrado após {timeout} segundos.")
+            raise
 
     def download(self):
-        print(f"\n\n\n\033[35;40m{'-'*10} Repositório de Dados GOV - SICONV {'-'*10}\033[0m\n\n\n")
+        title = "Repositório de Dados GOV - SICONV"
+        print(f"\n\n\n\033[35;40m{'-'*(60-(len(title)//2))} {title} {'-'*(60-(len(title)//2))}\033[0m\n\n\n")
 
         options = webdriver.FirefoxOptions()
-        options.set_preference("browser.download.folderList", 2)
         options.set_preference("browser.download.dir", self.download_dir)
         options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/zip")
         options.set_preference("pdfjs.disabled", True)
@@ -64,13 +96,20 @@ class SiconvDownloader(BaseDownloader):
         options.set_preference("browser.tabs.warnOnCloseOtherTabs", False)
         options.set_preference("browser.tabs.warnOnOpen", False)
         options.set_preference("browser.download.manager.quitBehavior", 2)
+        options.set_preference("browser.download.folderList", 2)
+        options.add_argument("--headless") #
 
-
-        driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
+        driver = webdriver.Firefox(service=self.geckoDriver, options=options)
         driver.get("https://repositorio.dados.gov.br/seges/detru/")
-        time.sleep(10)
+        
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, "body > pre > a:nth-child(7)"))
+        )
 
         initial_files = set(os.listdir(self.download_dir))
+        
+        if not os.path.exists(self.final_dir):
+            os.mkdir(self.final_dir)
 
         try:
             download_link = driver.find_element(By.XPATH, '/html/body/pre/a[7]')
@@ -95,30 +134,9 @@ class SiconvDownloader(BaseDownloader):
             if driver:
                 driver.quit()
 
-        print("Chegou na dezipagem")
-
-        zip_path = os.path.join(self.download_dir, "siconv.zip")
+        zip_path = os.path.join(self.download_dir, str(next(iter(downloaded_files))))
 
         if os.path.exists(zip_path):
-            file_path = os.path.join(self.download_dir, "siconv.zip")
+            file_path = os.path.join(self.download_dir, str(next(iter(downloaded_files))))
 
-            self.clean_final_directory()
-
-            shutil.move(file_path, self.final_dir)
-            print("Arquivo movido para a pasta: ", self.final_dir)
-
-            moved_file_path = os.path.join(self.final_dir, "siconv.zip")
-
-            try:
-                with zipfile.ZipFile(moved_file_path, 'r') as zip_ref:
-                    print("Dezipando")
-                    zip_ref.extractall(self.final_dir)
-            except zipfile.BadZipFile as e:
-                print(f"Erro ao descompactar o arquivo ZIP: {e}")
-                return
-
-            print("Deletando siconv.zip")
-            os.remove(moved_file_path)
-            print("Programa finalizado!")
-        else:
-            print("Arquivo ZIP não encontrado após o download.")
+            self.extract_and_cleanup(file_path)            
