@@ -250,7 +250,7 @@ class PainelParlamentar(BaseDownloader):
             except Exception as e:
                 print(f"Erro durante a execução: {e}")
                 retries += 1
-                print(f"Tentativa {retries} de {self.max_retries}. Tentando novamente em {self.retry_delay} segundos...")
+                print(f"Tentativa {retries}. Tentando novamente em {self.retry_delay} segundos...")
                 time.sleep(self.retry_delay)
             finally:
                 if 'driver' in locals():
