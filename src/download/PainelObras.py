@@ -80,7 +80,7 @@ class PainelObras(BaseDownloader):
                     driver.quit()
                     print("Driver encerrado.")
                     
-            except (TimeoutException, NoSuchElementException, SessionNotCreatedException) as e:
+            except Exception as e:
                 retries += 1
                 print(f"Erro durante a execução: {e}. Tentativa {retries}...")
                 time.sleep(self.retry_delay)
