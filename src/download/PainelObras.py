@@ -33,6 +33,7 @@ class PainelObras(BaseDownloader):
         retries = 0
         
         while True:
+            driver = None
             try:
                 title = "Painel de Obras - Pernambuco"
                 print(f"\n\n\n\033[36;40m{'-'*(60-(len(title)//2))} {title} {'-'*(60-(len(title)//2))}\033[0m\n\n\n")
@@ -50,10 +51,11 @@ class PainelObras(BaseDownloader):
                 driver.get("https://qlik-publico.paineis.gov.br/extensions/obras/obras.html")
                 
                 WebDriverWait(driver, 10).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, 'text[data-label="PE"]'))
+                    EC.visibility_of_element_located((By.CSS_SELECTOR, 'text[data-label="PE"]'))
                 )
                 
                 try:
+                    
                     uf_element = driver.find_element(By.CSS_SELECTOR, 'text[data-label="PE"]')
                     uf_element.click()
                     
@@ -77,10 +79,13 @@ class PainelObras(BaseDownloader):
                     break
                 
                 finally:
-                    driver.quit()
+                    if driver:
+                        driver.quit()
                     print("Driver encerrado.")
                     
             except Exception as e:
+                print(f"Erro durante a execução: {e}. Tentativa {retries + 1}...")
+                if driver:
+                    driver.quit()
                 retries += 1
-                print(f"Erro durante a execução: {e}. Tentativa {retries}...")
                 time.sleep(self.retry_delay)
