@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException, SessionNotCreatedException
 import pandas as pd
 from .BaseDownloader import BaseDownloader
 
@@ -80,8 +80,7 @@ class PainelObras(BaseDownloader):
                     driver.quit()
                     print("Driver encerrado.")
                     
-            except (TimeoutException, NoSuchElementException) as e:
+            except (TimeoutException, NoSuchElementException, SessionNotCreatedException) as e:
                 retries += 1
                 print(f"Erro durante a execução: {e}. Tentativa {retries}...")
                 time.sleep(self.retry_delay)
-                
