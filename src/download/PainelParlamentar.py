@@ -32,7 +32,7 @@ class PainelParlamentar(BaseDownloader):
         while True:
             current_files = set(os.listdir(self.download_dir))
             new_files = current_files - initial_files
-            
+                        
             temp_files = [
                 file for file in new_files
                 if any(file.endswith(ext) for ext in TEMPORARY_EXTENSIONS)
