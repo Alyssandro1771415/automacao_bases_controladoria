@@ -1,1 +1,59 @@
-*.pyc
+# Sistema operacional
+.DS_Store       # macOS
+Thumbs.db       # Windows
+
+# Diretórios de build
+node_modules/   # Node.js
+dist/           # Diretório de build genérico
+build/          # Diretório de build genérico
+out/            # Outros diretórios de saída
+
+# Dependências
+*.log           # Arquivos de log
+*.swp           # Arquivos temporários do Vim
+
+# Arquivos de IDEs e editores
+.vscode/         # Visual Studio Code
+.idea/           # JetBrains (IntelliJ, PhpStorm, etc.)
+*.sublime-workspace
+*.sublime-project
+
+# Arquivos de configuração
+*.env           # Arquivos de ambiente (variáveis de ambiente)
+.env.*          # Arquivos de ambiente com sufixo
+
+# Arquivos do sistema
+*.bak           # Arquivos de backup
+*.tmp           # Arquivos temporários
+
+# Arquivos específicos de linguagens e frameworks
+
+## Python
+__pycache__/    # Cache de Python
+*.py[cod]       # Arquivos compilados de Python
+
+## Java
+*.class         # Arquivos compilados de Java
+
+## JavaScript
+*.log           # Arquivos de log do Node.js
+npm-debug.log   # Arquivo de log do npm
+
+## Ruby
+*.gem           # Arquivos de gem do Ruby
+*.rbc           # Arquivos compilados do Ruby
+
+## C / C++
+*.o             # Arquivos objeto
+*.a             # Arquivos de biblioteca estática
+*.so            # Bibliotecas compartilhadas
+
+## Go
+*.exe           # Arquivos binários do Go
+
+## Editorconfig
+*.editorconfig   # Arquivos de configuração do EditorConfig
+
+# Outros
+.idea/           # JetBrains
+.vscode/         # Visual Studio Code
