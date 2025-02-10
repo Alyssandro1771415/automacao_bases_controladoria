@@ -7,17 +7,15 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from .BaseDownloader import BaseDownloader
 
 class PainelObras(BaseDownloader):
-    
-    def download(self, browser="firefox"):
-        title = "Painel de Obras - Pernambuco"
-        self.logger.info(f"\n\n\n{'-'*(60-(len(title)//2))} {title} {'-'*(60-(len(title)//2))}\n\n\n")
-        
-        driver = self.get_driver(browser)
-        driver.get("https://qlik-publico.paineis.gov.br/extensions/obras/obras.html")
-        
+    def download(self, driver):
         try:
-            WebDriverWait(driver, 30).until(
-                EC.visibility_of_element_located((By.CSS_SELECTOR, 'text[data-label="PE"]'))
+            title = "Painel de Obras - Pernambuco"
+            self.logger.info(f"\n\n\n{'-'*(60-(len(title)//2))} {title} {'-'*(60-(len(title)//2))}\n\n\n")
+            
+            driver.get("https://qlik-publico.paineis.gov.br/extensions/obras/obras.html")
+            
+            WebDriverWait(driver, 60).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, 'text[data-label="PE"]'))
             )
             
             uf_element = driver.find_element(By.CSS_SELECTOR, 'text[data-label="PE"]')
@@ -39,16 +37,24 @@ class PainelObras(BaseDownloader):
             downloaded_file = downloaded_files.pop()
             file_path = os.path.join(self.download_dir, downloaded_file)
             self.logger.info(f"Arquivo detectado: {file_path}")
+
+            # verifica os primeiros 100bytes do arquivo
+            with open(file_path, 'rb') as f:
+                self.logger.info(f"Primeiros 100 bytes do arquivo: {f.read(100)}")
             
-            file_downloaded = pd.read_excel(file_path)
+            self.logger.info(f"Iniciando leitura do arquivo Excel: {file_path}")
+            # mecanismo está explicito no openpyxl - tentar com xlrd em caso de erro
+            file_downloaded = pd.read_excel(file_path, engine='openpyxl')
+            self.logger.info("Leitura do arquivo Excel concluída com sucesso")
             
-            self.clean_final_directory()
             csv_path = os.path.join(self.final_dir, "Obras.csv")
             file_downloaded.to_csv(csv_path, sep=";", index=False, encoding="utf-8-sig")
             self.logger.info(f"Novo arquivo salvo em: {csv_path}")
             
             os.remove(file_path)
             self.logger.info(f"Arquivo original removido: {file_path}")
+            
+            return csv_path
             
         except TimeoutException as e:
             self.logger.error(f"Timeout ao esperar pelo elemento: {e}")
@@ -59,6 +65,3 @@ class PainelObras(BaseDownloader):
         except Exception as e:
             self.logger.error(f"Erro inesperado durante o download: {e}")
             raise
-        finally:
-            driver.quit()
-            self.logger.info("Driver encerrado.")

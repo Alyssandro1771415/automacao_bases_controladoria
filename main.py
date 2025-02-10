@@ -19,11 +19,11 @@ def main():
     download_parlamentar = PainelParlamentar(geckoDriver, download_dir, os.path.join(final_dir, "EMENDAS"))
 
     try:
-        downloader_siconv.download()
-        downloader_portal.download()
-        downloader_orcamento.download()
-        downloader_obras.download()
-        download_parlamentar.download()
+        # downloader_siconv.run()
+        # downloader_portal.run()
+        # downloader_orcamento.run()
+        downloader_obras.run()
+        # download_parlamentar.run()
             
     finally:    
         final_files = set(os.listdir(download_dir)) 
