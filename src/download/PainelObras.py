@@ -68,8 +68,15 @@ class PainelObras(BaseDownloader):
                     print(f"Arquivo detectado: {downloaded_file}")
                     
                     file_path = os.path.join(self.download_dir, downloaded_file)
-                    file_downloaded = pd.read_excel(file_path)
+                    file_downloaded = pd.read_excel(file_path, dtype=str, engine="openpyxl")
                     
+                    campos_porcentagem = ["Execução Física", "Execução Financeira"]
+                    
+                    for campo in campos_porcentagem:
+                        for index, row in file_downloaded.iterrows():
+                            if str(row[campo]) != "-":
+                                row[campo] = str(round(float(row[campo])*100, 2))+"%"
+                                        
                     self.clean_final_directory()
                     csv_path = os.path.join(self.final_dir, "Obras.csv")
                     file_downloaded.to_csv(csv_path, sep=";", index=False, encoding="utf-8-sig")
