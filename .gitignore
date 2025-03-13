@@ -57,3 +57,5 @@ npm-debug.log   # Arquivo de log do npm
 # Outros
 .idea/           # JetBrains
 .vscode/         # Visual Studio Code
+
+*.txt

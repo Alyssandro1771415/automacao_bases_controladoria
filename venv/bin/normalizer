@@ -1,8 +1,10 @@
-#!/home/alyssandro/Documents/projeto_controladoria/DownloadTransfereGov/venv/bin/python3
+#!/bin/sh
+'''exec' "/home/luccas/Área de trabalho/programacao/homeOffice/automacao_bases_controladoria/venv/bin/python3" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
-from charset_normalizer.cli import cli_detect
+from charset_normalizer import cli
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
-    sys.exit(cli_detect())
+    sys.exit(cli.cli_detect())

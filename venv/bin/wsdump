@@ -1,4 +1,6 @@
-#!/home/alyssandro/Documents/projeto_controladoria/DownloadTransfereGov/venv/bin/python3
+#!/bin/sh
+'''exec' "/home/luccas/Área de trabalho/programacao/homeOffice/automacao_bases_controladoria/venv/bin/python3" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
