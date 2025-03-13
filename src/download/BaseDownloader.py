@@ -1,47 +1,92 @@
-# BaseDownloader.py
 from abc import ABC, abstractmethod
 import os
 import time
-import zipfile
-import shutil
 import logging
-import re
+from functools import wraps
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
-from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.edge.service import Service as EdgeService
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
+from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
-from src.utils import utils
 
 class BaseDownloader(ABC):
-    def __init__(self, geckoDriver, download_dir, final_dir, retry_delay=5, max_retries=5):
+    def __init__(self, geckoDriver, download_dir, final_dir) -> None:
         self.download_dir = download_dir
         self.final_dir = final_dir
         self.geckoDriver = geckoDriver
-        self.retry_delay = retry_delay
-        self.max_retries = max_retries
         self.setup_logging()
-
+        
+        # Configurar diretórios após setup do logging
+        self.setup_directories()
+        self.logger.info(f"Inicializado com diretório de download: {self.download_dir} e diretório final: {self.final_dir}")
+    
     def setup_logging(self):
-        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-        self.logger = logging.getLogger(self.__class__.__name__)
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler('downloader_log.txt'),
+                logging.StreamHandler()
+            ]
+        )
+        self.logger = logging.getLogger()
+
+    def log_error(self, message, exception=None):
+        if exception:
+            self.logger.error(f"{message}: {type(exception).__name__}: {str(exception)}")
+        else:
+            self.logger.error(message)
+    
+    # Adicionando métodos auxiliares para compatibilidade com o código existente
+    def log_info(self, message):
+        self.logger.info(message)
+    
+    def log_warning(self, message):
+        self.logger.warning(message)
+    
+    def log_debug(self, message):
+        self.logger.debug(message)
 
     def setup_directories(self):
-        if not os.path.exists(self.final_dir):
-            os.makedirs(self.final_dir)
-        utils.clean_database_download_directory(self.download_dir)
+        os.makedirs(self.download_dir, exist_ok=True)
+        os.makedirs(self.final_dir, exist_ok=True)
+        self.logger.info("Diretórios configurados com sucesso")
 
     def clean_final_directory(self):
-        utils.clean_database_download_directory(self.final_dir)
-        self.logger.info("Pasta final limpa e pronta para iniciar o processo.")
+        for file in os.listdir(self.final_dir):
+            file_path = os.path.join(self.final_dir, file)
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+                self.logger.info(f"Arquivo '{file}' removido da pasta final.")
 
-    def get_driver(self, browser="firefox"):
+    @staticmethod
+    def retry(max_attempts=5, delay=60):
+        def decorator(func):
+            @wraps(func)
+            def wrapper(self, *args, **kwargs):
+                attempts = 0
+                while attempts < max_attempts:
+                    try:
+                        return func(self, *args, **kwargs)
+                    except Exception as e:
+                        attempts += 1
+                        self.log_error(f"Tentativa {attempts} falhou", e)
+                        if attempts == max_attempts:
+                            self.logger.error("Todas as tentativas falharam")
+                            raise e
+                        self.logger.info(f"Tentando novamente em {delay} segundos...")
+                        time.sleep(delay)
+            return wrapper
+        return decorator
+
+    @abstractmethod
+    def download(self, browser="firefox"):
+        pass
+
+    def get_driver(self, browser):
+        self.logger.info(f"Inicializando driver para navegador: {browser}")
         if browser == "firefox":
             options = webdriver.FirefoxOptions()
             options.set_preference("browser.download.folderList", 2)
@@ -49,7 +94,9 @@ class BaseDownloader(ABC):
             options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/zip")
             options.set_preference("pdfjs.disabled", True)
             options.add_argument("--headless")
-            return webdriver.Firefox(service=self.geckoDriver, options=options)
+            driver = webdriver.Firefox(service=self.geckoDriver, options=options)
+            self.logger.info("Driver Firefox inicializado com sucesso")
+            return driver
         elif browser == "edge":
             options = webdriver.EdgeOptions()
             options.add_experimental_option("prefs", {
@@ -59,7 +106,9 @@ class BaseDownloader(ABC):
                 "safebrowsing.enabled": True
             })
             options.add_argument("--headless")
-            return webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=options)
+            driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=options)
+            self.logger.info("Driver Edge inicializado com sucesso")
+            return driver
         elif browser == "chrome":
             options = webdriver.ChromeOptions()
             options.add_experimental_option("prefs", {
@@ -69,108 +118,23 @@ class BaseDownloader(ABC):
                 "safebrowsing.enabled": True
             })
             options.add_argument("--headless")
-            return webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+            driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+            self.logger.info("Driver Chrome inicializado com sucesso")
+            return driver
         else:
+            self.logger.error(f"Navegador não suportado: {browser}")
             raise ValueError("Navegador não suportado")
-        
 
-    def _wait_for_download_to_complete(self, initial_files, timeout=300):
-        TEMPORARY_EXTENSIONS = ['.part', '.crdownload']
+    def _wait_for_download_to_complete(self, initial_files, timeout=120):
+        self.logger.info(f"Aguardando download completar (timeout: {timeout}s)")
         start_time = time.time()
-        
         while time.time() - start_time < timeout:
             current_files = set(os.listdir(self.download_dir))
             new_files = current_files - initial_files
-            
-            completed_files = [f for f in new_files if not any(f.endswith(ext) for ext in TEMPORARY_EXTENSIONS)]
-            
-            if completed_files:
-                return completed_files
-            
+            if new_files:
+                self.logger.info(f"Download concluído. Novos arquivos: {new_files}")
+                return new_files  
             time.sleep(1)
-        
-        return None
+        self.logger.error("Tempo limite para download excedido")
+        return set()
 
-    def _check_file_size(self, file_path, min_size=1):
-        if os.path.exists(file_path):
-            file_size = os.path.getsize(file_path)
-            if file_size >= min_size:
-                self.logger.info(f"Arquivo baixado com sucesso: {file_path} (Tamanho: {file_size} bytes)")
-                return True
-            else:
-                self.logger.warning(f"Arquivo baixado está vazio ou muito pequeno: {file_path} (Tamanho: {file_size} bytes)")
-                return False
-        else:
-            self.logger.error(f"Arquivo não encontrado: {file_path}")
-            return False
-
-    def extract_and_cleanup(self, zip_path, rename_to=None, delete_pattern=None, rename_pattern=None):
-        self.clean_final_directory()
-        
-        shutil.move(zip_path, self.final_dir)
-        self.logger.info(f"Arquivo movido para a pasta: {self.final_dir}")
-        moved_file_path = os.path.join(self.final_dir, os.path.basename(zip_path))
-        
-        with zipfile.ZipFile(moved_file_path, 'r') as zip_ref:
-            zip_ref.extractall(self.final_dir)
-        
-        os.remove(moved_file_path)
-        self.logger.info("Arquivo zip deletado após extração.")
-        
-        if delete_pattern:
-            for file in os.listdir(self.final_dir):
-                if re.match(delete_pattern, file):
-                    os.remove(os.path.join(self.final_dir, file))
-                    self.logger.info(f"Arquivo '{file}' deletado com sucesso!")
-        
-        if rename_pattern and rename_to:
-            for file in os.listdir(self.final_dir):
-                if re.match(rename_pattern, file):
-                    os.rename(os.path.join(self.final_dir, file), os.path.join(self.final_dir, rename_to))
-                    self.logger.info(f"Arquivo '{file}' renomeado para '{rename_to}'!")
-
-    @abstractmethod
-    def download(self, driver):
-        pass
-
-    def run(self):
-        browsers = ["firefox", "edge", "chrome"]
-        for browser in browsers:
-            retries = 0
-            while retries < self.max_retries:
-                driver = None
-                try:
-                    self.setup_directories()
-                    self.clean_final_directory()
-                    driver = self.get_driver(browser)
-                    driver.set_page_load_timeout(300)
-                    self.logger.info(f"Tentando download com o navegador: {browser}")
-                    downloaded_file = self.download(driver)
-                    
-                    if downloaded_file and self._check_file_size(downloaded_file):
-                        self.logger.info(f"Download concluído com sucesso usando {browser}.")
-                        return
-                    else:
-                        raise Exception("Arquivo baixado inválido ou vazio.")
-                    
-                except (TimeoutException, NoSuchElementException) as e:
-                    retries += 1
-                    self.logger.error(f"Erro de timeout ou elemento não encontrado: {e}. Tentativa {retries} de {self.max_retries} com {browser}...")
-                except WebDriverException as e:
-                    retries += 1
-                    self.logger.error(f"Erro do WebDriver: {e}. Tentativa {retries} de {self.max_retries} com {browser}...")
-                except Exception as e:
-                    retries += 1
-                    self.logger.error(f"Erro inesperado: {e}. Tentativa {retries} de {self.max_retries} com {browser}...")
-                finally:
-                    if driver:
-                        driver.quit()
-                
-                if retries < self.max_retries:
-                    time.sleep(self.retry_delay)
-                else:
-                    self.logger.error(f"Número máximo de tentativas atingido com {browser}. Tentando próximo navegador...")
-                    break
-        
-        self.logger.error("Falha ao baixar o arquivo após tentar com todos os navegadores.")
-        raise Exception("Falha ao baixar o arquivo após várias tentativas com todos os navegadores")

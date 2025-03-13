@@ -1,0 +1,294 @@
+2025-03-12 22:22:18,314 - INFO - Inicializado com retry_delay: 5
+2025-03-12 22:22:18,314 - INFO - Iniciando download do Orçamento Geral da União
+2025-03-12 22:22:41,385 - INFO - Diretórios configurados com sucesso
+2025-03-12 22:22:41,385 - INFO - Inicializado com diretório de download: /home/luccas/Downloads e diretório final: /home/luccas/Desktop/Bases_Paineis/ORCAMENTO
+2025-03-12 22:22:41,385 - INFO - Inicializado com retry_delay: 5
+2025-03-12 22:22:41,386 - INFO - Iniciando download do Orçamento Geral da União
+2025-03-12 22:22:41,386 - INFO - Diretórios configurados com sucesso
+2025-03-12 22:22:41,386 - INFO - Usando navegador: firefox
+2025-03-12 22:22:41,386 - INFO - Inicializando driver para navegador: firefox
+2025-03-12 22:22:44,292 - INFO - Driver Firefox inicializado com sucesso
+2025-03-12 22:22:44,293 - INFO - Navegando para a página de downloads da Caixa
+2025-03-12 22:22:49,769 - INFO - Página carregada com sucesso
+2025-03-12 22:22:49,769 - INFO - Tentando aceitar cookies...
+2025-03-12 22:22:53,169 - INFO - Botão de aceitar cookies clicado com sucesso
+2025-03-12 22:22:53,169 - INFO - Tentando clicar no botão de categoria 944...
+2025-03-12 22:22:53,477 - INFO - Botão de categoria clicado com sucesso
+2025-03-12 22:22:56,477 - INFO - Aguardando 3 segundos para carregamento da categoria
+2025-03-12 22:22:56,478 - INFO - Arquivos iniciais no diretório de download: 3
+2025-03-12 22:22:56,478 - INFO - Tentando encontrar link para arquivo: BD_Gestores_12_03_2025.zip
+2025-03-12 22:22:56,486 - INFO - Link para arquivo específico encontrado: BD_Gestores_12_03_2025.zip
+2025-03-12 22:23:01,822 - INFO - Link de download clicado
+2025-03-12 22:23:01,822 - INFO - Aguardando conclusão do download...
+2025-03-12 22:23:01,822 - INFO - Aguardando download completar (timeout: 120s)
+2025-03-12 22:23:01,823 - INFO - Download concluído. Novos arquivos: {'BD_Gestores_12_03_2025.UUe6VkH0.zip.part', 'BD_Gestores_12_03_2025.zip'}
+2025-03-12 22:23:01,823 - INFO - Download concluído. Arquivo baixado: BD_Gestores_12_03_2025.UUe6VkH0.zip.part
+2025-03-12 22:25:01,922 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=58983): Read timed out. (read timeout=120)")': /session/a4e2d19f-826c-43bf-a77d-8dcf6e4b6ea2
+2025-03-12 22:27:02,022 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=58983): Read timed out. (read timeout=120)")': /session/a4e2d19f-826c-43bf-a77d-8dcf6e4b6ea2
+2025-03-12 22:29:02,122 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=58983): Read timed out. (read timeout=120)")': /session/a4e2d19f-826c-43bf-a77d-8dcf6e4b6ea2
+2025-03-12 22:33:51,321 - INFO - Diretórios configurados com sucesso
+2025-03-12 22:33:51,321 - INFO - Inicializado com diretório de download: /home/luccas/Downloads e diretório final: /home/luccas/Desktop/Bases_Paineis/OBRAS
+2025-03-12 22:33:51,321 - INFO - Inicializado com retry_delay: 5
+2025-03-12 22:33:51,321 - INFO - Iniciando download do Painel de Obras - Pernambuco
+2025-03-12 22:33:51,321 - INFO - Diretórios configurados com sucesso
+2025-03-12 22:33:51,321 - INFO - Diretórios configurados
+2025-03-12 22:33:51,321 - INFO - Inicializando driver para navegador: firefox
+2025-03-12 22:33:54,075 - INFO - Driver Firefox inicializado com sucesso
+2025-03-12 22:33:54,076 - INFO - Navegando para a página do Painel de Obras
+2025-03-12 22:33:57,430 - INFO - Aguardando carregamento da página
+2025-03-12 22:34:06,703 - INFO - Página carregada com sucesso
+2025-03-12 22:34:06,703 - INFO - Tentando clicar no elemento PE
+2025-03-12 22:34:07,456 - INFO - Elemento PE clicado com sucesso
+2025-03-12 22:34:07,456 - INFO - Localizando botão de download
+2025-03-12 22:34:07,465 - INFO - Arquivos iniciais no diretório de download: 3
+2025-03-12 22:34:07,728 - INFO - Botão de download clicado
+2025-03-12 22:34:07,729 - INFO - Aguardando download completar (timeout: 120s)
+2025-03-12 22:34:09,729 - INFO - Download concluído. Novos arquivos: {'f40da7da-57a7-4738-a6be-ed0bb7c11786.sjvpr_7P.xlsx.part', 'f40da7da-57a7-4738-a6be-ed0bb7c11786.xlsx'}
+2025-03-12 22:34:09,730 - INFO - Arquivo detectado: f40da7da-57a7-4738-a6be-ed0bb7c11786.sjvpr_7P.xlsx.part
+2025-03-12 22:34:09,730 - INFO - Lendo arquivo Excel: /home/luccas/Downloads/f40da7da-57a7-4738-a6be-ed0bb7c11786.sjvpr_7P.xlsx.part
+2025-03-12 22:34:09,730 - ERROR - Erro ao processar o arquivo Excel: ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-03-12 22:34:09,731 - ERROR - Erro durante o download: ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-03-12 22:35:28,202 - INFO - Diretórios configurados com sucesso
+2025-03-12 22:35:28,202 - INFO - Inicializado com diretório de download: /home/luccas/Downloads e diretório final: /home/luccas/Desktop/Bases_Paineis/OBRAS
+2025-03-12 22:35:28,203 - INFO - Inicializado com retry_delay: 5
+2025-03-12 22:35:28,203 - INFO - Iniciando download do Painel de Obras - Pernambuco
+2025-03-12 22:35:28,203 - INFO - Diretórios configurados com sucesso
+2025-03-12 22:35:28,203 - INFO - Diretórios configurados
+2025-03-12 22:35:28,203 - INFO - Inicializando driver para navegador: firefox
+2025-03-12 22:35:30,442 - INFO - Driver Firefox inicializado com sucesso
+2025-03-12 22:35:30,442 - INFO - Navegando para a página do Painel de Obras
+2025-03-12 22:35:33,466 - INFO - Aguardando carregamento da página
+2025-03-12 22:35:39,192 - INFO - Página carregada com sucesso
+2025-03-12 22:35:39,192 - INFO - Tentando clicar no elemento PE
+2025-03-12 22:35:39,943 - INFO - Elemento PE clicado com sucesso
+2025-03-12 22:35:39,943 - INFO - Localizando botão de download
+2025-03-12 22:35:39,970 - INFO - Arquivos iniciais no diretório de download: 3
+2025-03-12 22:35:40,219 - INFO - Botão de download clicado
+2025-03-12 22:35:40,220 - INFO - Aguardando download completar (timeout: 120s)
+2025-03-12 22:35:42,220 - INFO - Download concluído. Novos arquivos: {'aa377212-469e-4380-aad0-59292ac7f34d.xlsx'}
+2025-03-12 22:35:42,221 - INFO - Arquivo detectado: aa377212-469e-4380-aad0-59292ac7f34d.xlsx
+2025-03-12 22:35:42,221 - INFO - Lendo arquivo Excel: /home/luccas/Downloads/aa377212-469e-4380-aad0-59292ac7f34d.xlsx
+2025-03-12 22:35:45,601 - INFO - Arquivo lido com sucesso. Linhas: 7933
+2025-03-12 22:35:45,601 - INFO - Processando campos de porcentagem
+2025-03-12 22:35:46,671 - INFO - Campos de porcentagem processados
+2025-03-12 22:35:46,671 - INFO - Diretório final limpo
+2025-03-12 22:35:46,671 - INFO - Salvando arquivo CSV em: /home/luccas/Desktop/Bases_Paineis/OBRAS/Obras.csv
+2025-03-12 22:35:46,990 - INFO - Arquivo CSV salvo com sucesso
+2025-03-12 22:35:46,991 - INFO - Arquivo original removido: /home/luccas/Downloads/aa377212-469e-4380-aad0-59292ac7f34d.xlsx
+2025-03-12 22:35:47,695 - INFO - Driver encerrado
+2025-03-12 22:52:58,175 - INFO - Diretórios configurados com sucesso
+2025-03-12 22:52:58,175 - INFO - Inicializado com diretório de download: /home/luccas/Downloads e diretório final: /home/luccas/Desktop/Bases_Paineis/EMENDAS
+2025-03-12 22:52:58,176 - INFO - Inicializado com retry_delay: 5
+2025-03-12 22:52:58,176 - INFO - Iniciando download do Painel Parlamentar - Pernambuco
+2025-03-12 22:52:58,176 - INFO - Diretórios configurados com sucesso
+2025-03-12 22:52:58,176 - INFO - Diretórios configurados
+2025-03-12 22:53:00,476 - INFO - Driver Firefox inicializado com configurações personalizadas
+2025-03-12 22:53:00,476 - INFO - Navegando para a página do Painel Parlamentar
+2025-03-12 22:53:04,675 - INFO - Aguardando carregamento da página
+2025-03-12 22:53:10,861 - INFO - Página carregada com sucesso
+2025-03-12 22:53:10,861 - INFO - Verificando se há bloqueador na página
+2025-03-12 22:53:12,532 - INFO - Bloqueador removido.
+2025-03-12 22:53:12,533 - INFO - Iniciando seleção de UF Beneficiária
+2025-03-12 22:53:12,804 - INFO - Seletor de UF Beneficiária clicado
+2025-03-12 22:53:12,841 - INFO - Selecionando UF 'PE'
+2025-03-12 22:53:13,097 - INFO - UF 'PE' selecionada
+2025-03-12 22:53:13,097 - INFO - Aguardando atualização dos gráficos após seleção de UF
+2025-03-12 22:53:18,145 - INFO - Gráficos atualizados após seleção de UF
+2025-03-12 22:53:20,405 - INFO - Seleção de UF confirmada
+2025-03-12 22:53:20,405 - INFO - Iniciando seleção de Natureza Jurídica
+2025-03-12 22:53:20,681 - INFO - Seletor de Natureza Jurídica clicado
+2025-03-12 22:53:20,711 - INFO - Selecionando 'ou do Distrito'
+2025-03-12 22:53:21,050 - INFO - 'ou do Distrito' selecionado
+2025-03-12 22:53:21,050 - INFO - Aguardando atualização dos gráficos após primeira seleção de Natureza Jurídica
+2025-03-12 22:53:26,125 - INFO - Gráficos atualizados após primeira seleção de Natureza Jurídica
+2025-03-12 22:53:26,125 - INFO - Selecionando 'Empresa'
+2025-03-12 22:53:26,195 - INFO - 'Empresa' selecionado
+2025-03-12 22:53:26,195 - INFO - Aguardando atualização dos gráficos após segunda seleção de Natureza Jurídica
+2025-03-12 22:53:31,240 - INFO - Gráficos atualizados após segunda seleção de Natureza Jurídica
+2025-03-12 22:53:31,622 - INFO - Seleção de Natureza Jurídica confirmada
+2025-03-12 22:53:31,622 - INFO - Iniciando seleção de Modalidade
+2025-03-12 22:53:31,892 - INFO - Seletor de Modalidade clicado
+2025-03-12 22:53:41,892 - INFO - Elementos a selecionar: ['CONVENIO', 'CONTRATO DE REPASSE', 'CONVENIO OU CONTRATO DE REPASSE', 'TERMO DE COMPROMISSO']
+2025-03-12 22:53:46,928 - INFO - Verificando elemento: CONTRATO DE REPASSE
+2025-03-12 22:53:46,928 - INFO - Selecionando elemento: CONTRATO DE REPASSE
+2025-03-12 22:53:47,180 - INFO - Elemento CONTRATO DE REPASSE clicado
+2025-03-12 22:53:47,180 - INFO - Aguardando atualização dos gráficos após seleção de CONTRATO DE REPASSE
+2025-03-12 22:53:47,364 - INFO - Gráficos atualizados após seleção de CONTRATO DE REPASSE
+2025-03-12 22:53:47,365 - INFO - Elementos restantes a selecionar: ['CONVENIO', 'CONVENIO OU CONTRATO DE REPASSE', 'TERMO DE COMPROMISSO']
+2025-03-12 22:53:52,401 - INFO - Verificando elemento: CONVENIO
+2025-03-12 22:53:52,401 - INFO - Selecionando elemento: CONVENIO
+2025-03-12 22:53:52,640 - INFO - Elemento CONVENIO clicado
+2025-03-12 22:53:52,641 - INFO - Aguardando atualização dos gráficos após seleção de CONVENIO
+2025-03-12 22:53:57,688 - INFO - Gráficos atualizados após seleção de CONVENIO
+2025-03-12 22:53:57,689 - INFO - Elementos restantes a selecionar: ['CONVENIO OU CONTRATO DE REPASSE', 'TERMO DE COMPROMISSO']
+2025-03-12 22:54:02,728 - INFO - Verificando elemento: CONVENIO OU CONTRATO DE REPASSE
+2025-03-12 22:54:02,728 - INFO - Selecionando elemento: CONVENIO OU CONTRATO DE REPASSE
+2025-03-12 22:54:02,964 - INFO - Elemento CONVENIO OU CONTRATO DE REPASSE clicado
+2025-03-12 22:54:02,964 - INFO - Aguardando atualização dos gráficos após seleção de CONVENIO OU CONTRATO DE REPASSE
+2025-03-12 22:54:13,046 - INFO - Gráficos atualizados após seleção de CONVENIO OU CONTRATO DE REPASSE
+2025-03-12 22:54:13,047 - INFO - Elementos restantes a selecionar: ['TERMO DE COMPROMISSO']
+2025-03-12 22:54:18,093 - INFO - Verificando elemento: ESPECIAL
+2025-03-12 22:54:23,139 - INFO - Verificando elemento: TERMO DE COMPROMISSO
+2025-03-12 22:54:23,139 - INFO - Selecionando elemento: TERMO DE COMPROMISSO
+2025-03-12 22:54:23,417 - INFO - Elemento TERMO DE COMPROMISSO clicado
+2025-03-12 22:54:23,417 - INFO - Aguardando atualização dos gráficos após seleção de TERMO DE COMPROMISSO
+2025-03-12 22:54:33,500 - INFO - Gráficos atualizados após seleção de TERMO DE COMPROMISSO
+2025-03-12 22:54:33,500 - INFO - Elementos restantes a selecionar: []
+2025-03-12 22:54:33,500 - INFO - Todos os elementos necessários já foram selecionados
+2025-03-12 22:54:33,500 - INFO - Capturando estado inicial da tabela
+2025-03-12 22:54:33,805 - INFO - Seleção de Modalidade confirmada
+2025-03-12 22:54:33,806 - INFO - Arquivos iniciais no diretório de download: 3
+2025-03-12 22:54:33,806 - INFO - Aguardando atualização da tabela
+2025-03-12 22:54:33,931 - INFO - Aguardando preparação do arquivo... (tentativa 1)
+2025-03-12 22:54:39,016 - INFO - Aguardando preparação do arquivo... (tentativa 2)
+2025-03-12 22:54:44,104 - INFO - Tabela atualizada, pronto para download
+2025-03-12 22:54:44,332 - INFO - Botão de download clicado
+2025-03-12 22:54:49,332 - INFO - Aguardando conclusão do download
+2025-03-12 22:54:49,332 - INFO - Aguardando conclusão do download com verificação de arquivos temporários
+2025-03-12 22:54:49,332 - WARNING - Nenhum arquivo novo detectado ainda
+2025-03-12 22:54:54,333 - WARNING - Nenhum arquivo novo detectado ainda
+2025-03-12 22:54:59,333 - WARNING - Nenhum arquivo novo detectado ainda
+2025-03-12 22:55:04,333 - WARNING - Nenhum arquivo novo detectado ainda
+2025-03-12 22:55:09,334 - WARNING - Nenhum arquivo novo detectado ainda
+2025-03-12 22:55:14,334 - INFO - Download concluído. Arquivos baixados: {'f6871278-0e36-47f1-b061-bf31ba53f2ee.xlsx'}
+2025-03-12 22:55:14,334 - INFO - Arquivo detectado: f6871278-0e36-47f1-b061-bf31ba53f2ee.xlsx
+2025-03-12 22:55:14,335 - INFO - Caminho do arquivo baixado: /home/luccas/Downloads/f6871278-0e36-47f1-b061-bf31ba53f2ee.xlsx
+2025-03-12 22:55:14,335 - INFO - Novo nome de arquivo: Emendas.xlsx
+2025-03-12 22:55:14,335 - INFO - Diretório final limpo
+2025-03-12 22:55:14,335 - INFO - Arquivo renomeado para 'Emendas.xlsx' e movido para: /home/luccas/Desktop/Bases_Paineis/EMENDAS/Emendas.xlsx
+2025-03-12 22:55:14,683 - INFO - Driver encerrado
+2025-03-12 23:16:19,333 - INFO - Diretórios configurados com sucesso
+2025-03-12 23:16:19,333 - INFO - Inicializado com diretório de download: /home/luccas/Downloads e diretório final: /home/luccas/Desktop/Bases_Paineis/PORTAL
+2025-03-12 23:16:19,333 - INFO - Inicializado com retry_delay: 5
+2025-03-12 23:16:19,333 - INFO - Iniciando download do Portal da Transparência - Convênio
+2025-03-12 23:16:19,333 - INFO - Diretórios configurados com sucesso
+2025-03-12 23:16:19,333 - INFO - Diretórios configurados
+2025-03-12 23:16:19,333 - INFO - Inicializando driver para navegador: firefox
+2025-03-12 23:16:21,609 - INFO - Driver Firefox inicializado com sucesso
+2025-03-12 23:16:21,609 - INFO - Driver firefox inicializado
+2025-03-12 23:16:21,609 - INFO - Navegando para a página do Portal da Transparência - Convênios
+2025-03-12 23:16:24,373 - INFO - Aguardando carregamento da página
+2025-03-12 23:16:24,410 - INFO - Página carregada com sucesso
+2025-03-12 23:16:24,410 - INFO - Tentando aceitar cookies...
+2025-03-12 23:16:24,805 - INFO - Botão de aceitar cookies clicado com sucesso
+2025-03-12 23:16:24,809 - INFO - Arquivos iniciais no diretório de download: 3
+2025-03-12 23:16:30,072 - INFO - Link de download clicado
+2025-03-12 23:16:30,072 - INFO - Aguardando conclusão do download
+2025-03-12 23:16:30,072 - INFO - Aguardando download completar (timeout: 120s)
+2025-03-12 23:16:50,073 - INFO - Download concluído. Novos arquivos: {'20250307_Convenios.zip'}
+2025-03-12 23:16:50,677 - INFO - Download concluído. Arquivo baixado: 20250307_Convenios.zip
+2025-03-12 23:16:50,677 - INFO - Iniciando extração e limpeza do arquivo
+2025-03-12 23:16:50,677 - INFO - Iniciando extração e limpeza do arquivo: /home/luccas/Downloads/20250307_Convenios.zip
+2025-03-12 23:16:50,677 - INFO - Diretório final limpo
+2025-03-12 23:16:50,678 - INFO - Arquivo movido para a pasta: /home/luccas/Desktop/Bases_Paineis/PORTAL
+2025-03-12 23:16:50,678 - INFO - Extraindo arquivo ZIP: /home/luccas/Desktop/Bases_Paineis/PORTAL/20250307_Convenios.zip
+2025-03-12 23:16:50,678 - INFO - Arquivos contidos no ZIP: 2
+2025-03-12 23:16:52,595 - INFO - Extração concluída no diretório: /home/luccas/Desktop/Bases_Paineis/PORTAL
+2025-03-12 23:16:52,608 - INFO - Arquivo ZIP deletado após extração
+2025-03-12 23:16:52,609 - INFO - Arquivos extraídos: ['20250307_Convenios.csv', '20250307_Convenios_OrdensBancarias.csv']
+2025-03-12 23:16:52,634 - INFO - Arquivo '20250307_Convenios_OrdensBancarias.csv' deletado com sucesso
+2025-03-12 23:16:52,635 - INFO - Arquivo '20250307_Convenios.csv' renomeado para 'Convenios.csv'
+2025-03-12 23:16:52,635 - INFO - Extração e limpeza concluídas com sucesso
+2025-03-12 23:16:53,417 - INFO - Driver encerrado
+2025-03-12 23:31:34,503 - INFO - Diretórios configurados com sucesso
+2025-03-12 23:31:34,504 - INFO - Inicializado com diretório de download: /home/luccas/Downloads e diretório final: /home/luccas/Desktop/Bases_Paineis/SICONV
+2025-03-12 23:31:34,504 - INFO - Inicializado com retry_delay: 5
+2025-03-12 23:31:34,504 - INFO - Iniciando download do Repositório de Dados GOV - SICONV
+2025-03-12 23:31:34,504 - INFO - Diretórios configurados com sucesso
+2025-03-12 23:31:34,504 - INFO - Diretórios configurados
+2025-03-12 23:31:37,524 - INFO - Driver Firefox inicializado com configurações personalizadas
+2025-03-12 23:31:37,524 - INFO - Navegando para o repositório de dados do SICONV
+2025-03-12 23:31:38,143 - INFO - Aguardando carregamento da página
+2025-03-12 23:31:38,320 - INFO - Página carregada com sucesso
+2025-03-12 23:31:38,320 - INFO - Arquivos iniciais no diretório de download: 3
+2025-03-12 23:31:43,576 - INFO - Link de download clicado
+2025-03-12 23:31:43,577 - INFO - Aguardando conclusão do download
+2025-03-12 23:31:43,577 - INFO - Aguardando download completar (timeout: 120s)
+2025-03-12 23:33:43,582 - ERROR - Tempo limite para download excedido
+2025-03-12 23:33:43,583 - ERROR - Nenhum arquivo baixado
+2025-03-12 23:33:43,583 - ERROR - Erro durante o download: TimeoutException: Message: Nenhum novo arquivo detectado após o download.
+
+2025-03-12 23:35:43,617 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=16461): Read timed out. (read timeout=120)")': /session/24e70ea5-8204-4b74-aaef-915205ea7e75
+2025-03-12 23:37:43,720 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=16461): Read timed out. (read timeout=120)")': /session/24e70ea5-8204-4b74-aaef-915205ea7e75
+2025-03-12 23:39:43,820 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=16461): Read timed out. (read timeout=120)")': /session/24e70ea5-8204-4b74-aaef-915205ea7e75
+2025-03-13 10:59:43,078 - INFO - Diretórios configurados com sucesso
+2025-03-13 10:59:43,078 - INFO - Inicializado com diretório de download: /home/luccas/Downloads e diretório final: /home/luccas/Desktop/Bases_Paineis/SICONV
+2025-03-13 10:59:43,079 - INFO - Inicializado com retry_delay: 5
+2025-03-13 10:59:43,079 - INFO - Iniciando download do Repositório de Dados GOV - SICONV
+2025-03-13 10:59:43,079 - INFO - Diretórios configurados com sucesso
+2025-03-13 10:59:43,079 - INFO - Diretórios configurados
+2025-03-13 10:59:49,370 - INFO - Driver Firefox inicializado com configurações personalizadas
+2025-03-13 10:59:49,370 - INFO - Navegando para o repositório de dados do SICONV
+2025-03-13 10:59:50,226 - INFO - Aguardando carregamento da página
+2025-03-13 10:59:50,721 - INFO - Página carregada com sucesso
+2025-03-13 10:59:50,722 - INFO - Arquivos iniciais no diretório de download: 3
+2025-03-13 10:59:55,999 - INFO - Link de download clicado
+2025-03-13 10:59:55,999 - INFO - Aguardando conclusão do download
+2025-03-13 10:59:55,999 - INFO - Aguardando download completar (timeout: 300s)
+2025-03-13 11:02:11,008 - WARNING - Tamanho do arquivo não mudou. Tentativa 1/10
+2025-03-13 11:02:16,009 - WARNING - Tamanho do arquivo não mudou. Tentativa 2/10
+2025-03-13 11:02:21,010 - WARNING - Tamanho do arquivo não mudou. Tentativa 3/10
+2025-03-13 11:02:26,011 - WARNING - Tamanho do arquivo não mudou. Tentativa 4/10
+2025-03-13 11:02:31,012 - WARNING - Tamanho do arquivo não mudou. Tentativa 5/10
+2025-03-13 11:02:36,013 - WARNING - Tamanho do arquivo não mudou. Tentativa 6/10
+2025-03-13 11:02:41,014 - WARNING - Tamanho do arquivo não mudou. Tentativa 7/10
+2025-03-13 11:02:46,015 - WARNING - Tamanho do arquivo não mudou. Tentativa 8/10
+2025-03-13 11:02:51,016 - WARNING - Tamanho do arquivo não mudou. Tentativa 9/10
+2025-03-13 11:02:56,017 - WARNING - Tamanho do arquivo não mudou. Tentativa 10/10
+2025-03-13 11:02:56,017 - ERROR - Download parece estar pausado ou com erro após várias tentativas
+2025-03-13 11:02:56,018 - ERROR - Erro durante o download: TimeoutError: Download parece estar pausado ou com erro.
+2025-03-13 11:02:56,268 - INFO - Driver encerrado
+2025-03-13 11:02:56,268 - ERROR - Tentativa 1 falhou: TimeoutError: Download parece estar pausado ou com erro.
+2025-03-13 11:02:56,268 - INFO - Tentando novamente em 5 segundos...
+2025-03-13 11:03:01,268 - INFO - Iniciando download do Repositório de Dados GOV - SICONV
+2025-03-13 11:03:01,269 - INFO - Diretórios configurados com sucesso
+2025-03-13 11:03:01,269 - INFO - Diretórios configurados
+2025-03-13 11:03:03,093 - INFO - Driver Firefox inicializado com configurações personalizadas
+2025-03-13 11:03:03,093 - INFO - Navegando para o repositório de dados do SICONV
+2025-03-13 11:03:03,809 - INFO - Aguardando carregamento da página
+2025-03-13 11:03:03,878 - INFO - Página carregada com sucesso
+2025-03-13 11:03:03,878 - INFO - Arquivos iniciais no diretório de download: 5
+2025-03-13 11:03:09,149 - INFO - Link de download clicado
+2025-03-13 11:03:09,150 - INFO - Aguardando conclusão do download
+2025-03-13 11:03:09,150 - INFO - Aguardando download completar (timeout: 300s)
+2025-03-13 11:04:04,155 - WARNING - Tamanho do arquivo não mudou. Tentativa 1/10
+2025-03-13 11:04:09,155 - WARNING - Tamanho do arquivo não mudou. Tentativa 2/10
+2025-03-13 11:04:14,156 - WARNING - Tamanho do arquivo não mudou. Tentativa 3/10
+2025-03-13 11:04:19,157 - WARNING - Tamanho do arquivo não mudou. Tentativa 4/10
+2025-03-13 11:04:24,158 - WARNING - Tamanho do arquivo não mudou. Tentativa 5/10
+2025-03-13 11:04:29,159 - WARNING - Tamanho do arquivo não mudou. Tentativa 6/10
+2025-03-13 11:04:34,160 - WARNING - Tamanho do arquivo não mudou. Tentativa 7/10
+2025-03-13 11:04:39,161 - WARNING - Tamanho do arquivo não mudou. Tentativa 8/10
+2025-03-13 11:04:44,162 - WARNING - Tamanho do arquivo não mudou. Tentativa 9/10
+2025-03-13 11:04:49,163 - WARNING - Tamanho do arquivo não mudou. Tentativa 10/10
+2025-03-13 11:04:49,163 - ERROR - Download parece estar pausado ou com erro após várias tentativas
+2025-03-13 11:04:49,164 - ERROR - Erro durante o download: TimeoutError: Download parece estar pausado ou com erro.
+2025-03-13 11:04:49,726 - INFO - Driver encerrado
+2025-03-13 11:04:49,726 - ERROR - Tentativa 2 falhou: TimeoutError: Download parece estar pausado ou com erro.
+2025-03-13 11:04:49,726 - INFO - Tentando novamente em 5 segundos...
+2025-03-13 11:04:54,727 - INFO - Iniciando download do Repositório de Dados GOV - SICONV
+2025-03-13 11:04:54,727 - INFO - Diretórios configurados com sucesso
+2025-03-13 11:04:54,727 - INFO - Diretórios configurados
+2025-03-13 11:04:56,554 - INFO - Driver Firefox inicializado com configurações personalizadas
+2025-03-13 11:04:56,554 - INFO - Navegando para o repositório de dados do SICONV
+2025-03-13 11:04:57,176 - INFO - Aguardando carregamento da página
+2025-03-13 11:04:57,221 - INFO - Página carregada com sucesso
+2025-03-13 11:04:57,221 - INFO - Arquivos iniciais no diretório de download: 7
+2025-03-13 11:05:02,475 - INFO - Link de download clicado
+2025-03-13 11:05:02,475 - INFO - Aguardando conclusão do download
+2025-03-13 11:05:02,475 - INFO - Aguardando download completar (timeout: 300s)
+2025-03-13 11:08:17,489 - WARNING - Tamanho do arquivo não mudou. Tentativa 1/10
+2025-03-13 11:08:22,490 - WARNING - Tamanho do arquivo não mudou. Tentativa 2/10
+2025-03-13 11:08:27,490 - WARNING - Tamanho do arquivo não mudou. Tentativa 3/10
+2025-03-13 11:08:32,491 - WARNING - Tamanho do arquivo não mudou. Tentativa 4/10
+2025-03-13 11:08:37,491 - WARNING - Tamanho do arquivo não mudou. Tentativa 5/10
+2025-03-13 11:08:42,492 - WARNING - Tamanho do arquivo não mudou. Tentativa 6/10
+2025-03-13 11:08:47,494 - WARNING - Tamanho do arquivo não mudou. Tentativa 7/10
+2025-03-13 11:08:52,495 - WARNING - Tamanho do arquivo não mudou. Tentativa 8/10
+2025-03-13 11:08:57,496 - WARNING - Tamanho do arquivo não mudou. Tentativa 9/10
+2025-03-13 11:09:02,497 - WARNING - Tamanho do arquivo não mudou. Tentativa 10/10
+2025-03-13 11:09:02,497 - ERROR - Download parece estar pausado ou com erro após várias tentativas
+2025-03-13 11:09:02,497 - ERROR - Erro durante o download: TimeoutError: Download parece estar pausado ou com erro.
+2025-03-13 11:09:02,710 - INFO - Driver encerrado
+2025-03-13 11:09:02,710 - ERROR - Tentativa 3 falhou: TimeoutError: Download parece estar pausado ou com erro.
+2025-03-13 11:09:02,710 - ERROR - Todas as tentativas falharam

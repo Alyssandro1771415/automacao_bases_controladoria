@@ -1,38 +1,41 @@
 import os
-
-from src.download import PortalConvenioDownloader, OrcamentoDownloader, SiconvDownloader, PainelObras, PainelParlamentar
-from src.utils import utils
 from selenium.webdriver.firefox.service import Service
+from src.download import (
+    PortalConvenioDownloader,
+    OrcamentoDownloader,
+    SiconvDownloader,
+    PainelObras,
+    PainelParlamentar
+)
 
 def main():
     download_dir = os.path.expanduser("~/Downloads")
     final_dir = os.path.expanduser("~/Desktop/Bases_Paineis")
     
-    geckoDriver = Service("src/utils/geckodriver-v0.35.0-win64/geckodriver.exe")
+    geckoDriver = Service("src/utils/geckodriver-v0.35.0-linux64/geckodriver")
+    
     
     initial_files = set(os.listdir(download_dir))
     
-    downloader_siconv = SiconvDownloader(geckoDriver, download_dir, os.path.join(final_dir, "SICONV"))
-    downloader_portal = PortalConvenioDownloader(geckoDriver, download_dir, os.path.join(final_dir, "PORTAL"))
-    downloader_orcamento = OrcamentoDownloader(geckoDriver, download_dir, os.path.join(final_dir, "OBRAS"))
-    downloader_obras = PainelObras(geckoDriver, download_dir, os.path.join(final_dir, "OBRAS"))
-    download_parlamentar = PainelParlamentar(geckoDriver, download_dir, os.path.join(final_dir, "EMENDAS"))
+    downloaders = [
+        SiconvDownloader(geckoDriver, download_dir, os.path.join(final_dir, "SICONV")),
+        #PortalConvenioDownloader(geckoDriver, download_dir, os.path.join(final_dir, "PORTAL")),
+        #OrcamentoDownloader(geckoDriver, download_dir, os.path.join(final_dir, "ORCAMENTO")),
+        #PainelObras(geckoDriver, download_dir, os.path.join(final_dir, "OBRAS")),
+        #PainelParlamentar(geckoDriver, download_dir, os.path.join(final_dir, "EMENDAS")),
+    ]
 
     try:
-        # downloader_siconv.run()
-        # downloader_portal.run()
-        # downloader_orcamento.run()
-        downloader_obras.run()
-        # download_parlamentar.run()
+        for downloader in downloaders:
+            downloader.download()
             
     finally:    
         final_files = set(os.listdir(download_dir)) 
-        files_diference = final_files - initial_files
+        files_difference = final_files - initial_files
         
-        if len(files_diference) != 0:                
-            for file in files_diference:
+        if files_difference:
+            for file in files_difference:
                 os.remove(os.path.join(download_dir, file))
-                
 
 if __name__ == "__main__":
     main()
