@@ -18,8 +18,7 @@ class SiconvDownloader(BaseDownloader):
         self.retry_delay = retry_delay
         self.logger.info(f"Inicializado com retry_delay: {self.retry_delay}")
 
-    def _wait_for_download_to_complete(self, initial_files, timeout=300):
-       
+    def _wait_for_download_to_complete(self, initial_files, timeout=600):
         self.logger.info(f"Aguardando download completar (timeout: {timeout}s)")
         TEMPORARY_EXTENSIONS = ['.part', '.crdownload']
         previous_size = 0

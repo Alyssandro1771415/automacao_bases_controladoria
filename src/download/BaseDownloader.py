@@ -62,22 +62,30 @@ class BaseDownloader(ABC):
                 self.logger.info(f"Arquivo '{file}' removido da pasta final.")
 
     @staticmethod
-    def retry(max_attempts=5, delay=60):
+    def retry(max_attempts=3, delay=60):
         def decorator(func):
             @wraps(func)
-            def wrapper(self, *args, **kwargs):
-                attempts = 0
-                while attempts < max_attempts:
-                    try:
-                        return func(self, *args, **kwargs)
-                    except Exception as e:
-                        attempts += 1
-                        self.log_error(f"Tentativa {attempts} falhou", e)
-                        if attempts == max_attempts:
-                            self.logger.error("Todas as tentativas falharam")
-                            raise e
-                        self.logger.info(f"Tentando novamente em {delay} segundos...")
-                        time.sleep(delay)
+            def wrapper(self, *args, browser="firefox", **kwargs):
+                browsers = ["firefox", "edge", "chrome"]
+                for current_browser in browsers:
+                    attempts = 0
+                    while attempts < max_attempts:
+                        try:
+                            return func(self, *args, browser=current_browser, **kwargs)
+                        except Exception as e:
+                            attempts += 1
+                            error_message = f'Tentativa {attempts} com {current_browser} falhou. Erro: {type(e).__name__}: {str(e)}'
+                            self.log_error(error_message)
+                            if attempts == max_attempts:
+                                if current_browser != browsers[-1]:
+                                    self.logger.info(f"Todas as tentativas com {current_browser} falharam. Tentando com o próximo navegador...")
+                                    break
+                                else:
+                                    final_error = f'Todas as tentativas com todos os navegadores falharam.'
+                                    self.log_error(final_error)
+                                    raise
+                            self.logger.info(f'Tentando novamente com {current_browser} em {delay} segundos...')
+                            time.sleep(delay)
             return wrapper
         return decorator
 
