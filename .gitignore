@@ -31,6 +31,7 @@ out/            # Outros diretórios de saída
 ## Python
 __pycache__/    # Cache de Python
 *.py[cod]       # Arquivos compilados de Python
+venv/           # ambiente virtual
 
 ## Java
 *.class         # Arquivos compilados de Java
