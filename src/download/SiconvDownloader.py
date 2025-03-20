@@ -1,5 +1,5 @@
 import os
-import re
+import requests
 import time
 import zipfile
 import shutil
@@ -35,6 +35,10 @@ class SiconvDownloader(BaseDownloader):
                 temp_file_path = os.path.join(self.download_dir, temp_files[0])
                 try:
                     current_size = os.path.getsize(temp_file_path)
+                    
+                    # Exibir barra de loading
+                    self._print_progress_bar(current_size)
+                    
                     if current_size == previous_size:
                         retries += 1
                         if retries >= max_retries:
@@ -51,6 +55,26 @@ class SiconvDownloader(BaseDownloader):
             time.sleep(5)
 
         return new_files
+
+    def _print_progress_bar(self, current_size):
+        # Converte tamanhos para MB
+        current_size_mb = current_size / (1024 * 1024)
+        
+        # Obtém o tamanho total do arquivo via HTTP HEAD
+        url = "https://repositorio.dados.gov.br/seges/detru/siconv.zip"
+        response = requests.head(url, allow_redirects=True)
+        total_size_mb = int(response.headers.get("Content-Length", 0)) / (1024 * 1024)
+
+        # Calcula o progresso
+        progress = current_size_mb / total_size_mb if total_size_mb > 0 else 0
+
+        # Define tamanho da barra
+        bar_length = 50
+        filled_length = int(bar_length * progress)
+        bar = '█' * filled_length + '-' * (bar_length - filled_length)
+
+        # Exibe a barra de progresso
+        print(f'\rProgresso: |{bar}| {current_size_mb:.2f}/{total_size_mb:.2f} MB ({progress * 100:.2f}%)', end='', flush=True)
     
     def extract_and_cleanup(self, zip_path):
         
@@ -117,7 +141,7 @@ class SiconvDownloader(BaseDownloader):
             print("Download iniciado...")
 
             downloaded_files = self._wait_for_download_to_complete(initial_files=initial_files)
-            print(f"Arquivos detectados: {downloaded_files}")
+            print(f"\nArquivos detectados: {downloaded_files}")
 
         except TimeoutError as e:
             print(f"Erro: {e}. Reiniciando o download...")

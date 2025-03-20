@@ -8,7 +8,7 @@ def main():
     download_dir = os.path.expanduser("~/Downloads")
     final_dir = os.path.expanduser("~/Desktop/Bases_Paineis")
     
-    geckoDriver = Service("src/utils/geckodriver-v0.35.0-win64/geckodriver.exe")
+    geckoDriver = Service("src/utils/geckodriver-v0.36.0-linux64/geckodriver")
     
     initial_files = set(os.listdir(download_dir))
     

@@ -40,6 +40,8 @@ class PainelObras(BaseDownloader):
                 
                 self.setup_directories()
                 
+                initial_files = set(os.listdir(self.download_dir))
+                
                 options = webdriver.FirefoxOptions()
                 options.set_preference("browser.download.folderList", 2)
                 options.set_preference("browser.download.dir", self.download_dir)
@@ -60,7 +62,6 @@ class PainelObras(BaseDownloader):
                     uf_element.click()
                     
                     download_button = driver.find_element(By.XPATH, '//*[@id="btn-export-tbl-detalhes-obras"]')
-                    initial_files = set(os.listdir(self.download_dir))
                     download_button.click()
                     print("Download iniciado...")
                     
