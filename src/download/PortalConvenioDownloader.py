@@ -24,6 +24,8 @@ class PortalConvenioDownloader(BaseDownloader):
             try:
                 print(f"\n\n\n\033[31;40m{'-'*(60-(len(title)//2))} {title} {'-'*(60-(len(title)//2))}\033[0m\n\n\n")
                 
+                initial_files = set(os.listdir(self.download_dir))
+                
                 self.setup_directories()
                 
                 options = webdriver.FirefoxOptions()
@@ -50,7 +52,6 @@ class PortalConvenioDownloader(BaseDownloader):
                     print("Botão de aceitar cookies não encontrado. Continuando...")
                 
                 download_link = driver.find_element(By.XPATH, "//div[@id='arquivo-unico']//a")
-                initial_files = set(os.listdir(self.download_dir))
                 
                 download_link.click()
                 print("Download iniciado...")
