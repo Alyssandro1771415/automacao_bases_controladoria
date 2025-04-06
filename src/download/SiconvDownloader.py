@@ -127,7 +127,7 @@ class SiconvDownloader(BaseDownloader):
         driver.get("https://repositorio.dados.gov.br/seges/detru/")
         
         WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, "body > pre > a:nth-child(7)"))
+            EC.visibility_of_element_located((By.CSS_SELECTOR, "body > pre"))
         )
 
         initial_files = set(os.listdir(self.download_dir))
@@ -136,8 +136,20 @@ class SiconvDownloader(BaseDownloader):
             os.mkdir(self.final_dir)
 
         try:
-            download_link = driver.find_element(By.XPATH, '/html/body/pre/a[7]')
-            download_link.click()
+            elemento_pai = WebDriverWait(driver, 10).until(
+                EC.visibility_of_element_located((By.XPATH, "/html/body/pre"))
+            )
+
+            # Lista todos os <a> dentro do <pre>
+            links = elemento_pai.find_elements(By.TAG_NAME, 'a')
+
+            # Itera pelos links e clica no que contém o texto desejado
+            for link in links:
+                if "siconv.zip" == link.text:
+                    link.click()
+                    break
+            else:
+                print("Link com o texto desejado não foi encontrado.")
             print("Download iniciado...")
 
             downloaded_files = self._wait_for_download_to_complete(initial_files=initial_files)
