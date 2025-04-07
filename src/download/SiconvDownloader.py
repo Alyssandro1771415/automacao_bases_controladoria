@@ -91,19 +91,6 @@ class SiconvDownloader(BaseDownloader):
                         
         print("Deletando .zip")
         os.remove(moved_file_path)
-        
-    def wait_for_element(driver, locator_value, timeout=100, poll_frequency=0.5):
-
-        try:
-            print(f"Aguardando elemento: {locator_value} com timeout de {timeout}s...")
-            element = WebDriverWait(driver, timeout, poll_frequency).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, locator_value))
-            )
-            print(f"Elemento encontrado: {locator_value}")
-            return element
-        except TimeoutException:
-            print(f"Elemento {locator_value} não encontrado após {timeout} segundos.")
-            raise
 
     def download(self):
         title = "Repositório de Dados GOV - SICONV"
