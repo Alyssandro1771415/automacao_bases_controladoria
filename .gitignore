@@ -1,1 +1,32 @@
+# Arquivos de ambiente virtual
+venv/
+.env/
+
+# Arquivos de configuração do ambiente
 *.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Arquivos de log e temporários
+*.log
+*.tmp
+*.swp
+
+# Configurações do VSCode (caso use)
+.vscode/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+
+# Arquivos de testes ou caches
+.coverage
+.cache/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
