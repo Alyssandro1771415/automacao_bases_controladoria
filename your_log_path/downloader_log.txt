@@ -1,0 +1,187 @@
+2025-06-13 13:57:11,798 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-13 13:57:11,799 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-13 13:57:11,799 - INFO - ---------------------------------------------- Painel de Obras - Pernambuco ----------------------------------------------
+2025-06-13 13:57:11,799 - INFO - Inicializando driver para navegador: firefox
+2025-06-13 13:57:11,800 - INFO - ====== WebDriver manager ======
+2025-06-13 13:57:12,940 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-13 13:57:13,375 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-13 13:57:13,527 - INFO - There is no [win64] geckodriver "v0.36.0" for browser firefox "114.0" in cache
+2025-06-13 13:57:13,527 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-13 13:57:13,675 - INFO - Getting latest mozilla release info for v0.36.0
+2025-06-13 13:57:14,010 - INFO - About to download new driver from https://github.com/mozilla/geckodriver/releases/download/v0.36.0/geckodriver-v0.36.0-win64.zip
+2025-06-13 13:57:15,377 - INFO - Driver downloading response is 200
+2025-06-13 13:57:20,211 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-13 13:57:20,387 - INFO - Driver has been saved in cache [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0]
+2025-06-13 13:57:26,832 - INFO - Driver Firefox inicializado com sucesso
+2025-06-13 13:57:49,756 - INFO - Driver encerrado.
+2025-06-13 13:57:49,757 - ERROR - Erro durante a execução. Tentativa 1...: TimeoutException: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-13 13:57:53,823 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002070FD9B6A0>: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/b2d4470b-174c-452f-b735-a00f35aaf3b6
+2025-06-13 13:57:57,859 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002070FD9BDF0>: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /session/b2d4470b-174c-452f-b735-a00f35aaf3b6
+2025-06-26 13:44:39,996 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 13:44:39,997 - INFO - ----------------------------------------------- Painel Emendas - Pernambuco -----------------------------------------------
+2025-06-26 13:44:39,997 - INFO - Inicializando driver para navegador: firefox
+2025-06-26 13:44:39,997 - INFO - ====== WebDriver manager ======
+2025-06-26 13:44:41,105 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 13:44:41,572 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 13:44:41,898 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 13:44:42,199 - INFO - Getting latest mozilla release info for v0.36.0
+2025-06-26 13:44:42,685 - INFO - About to download new driver from https://github.com/mozilla/geckodriver/releases/download/v0.36.0/geckodriver-v0.36.0-win64.zip
+2025-06-26 13:44:44,282 - INFO - Driver downloading response is 200
+2025-06-26 13:44:48,506 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 13:44:48,833 - INFO - Driver has been saved in cache [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0]
+2025-06-26 13:44:55,968 - INFO - Driver Firefox inicializado com sucesso
+2025-06-26 13:45:03,679 - INFO - UF Beneficiária...
+2025-06-26 13:45:14,070 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-26 13:45:14,070 - INFO - Tentativa 1. Tentando novamente em 5 segundos...
+2025-06-26 13:45:21,692 - INFO - Driver encerrado.
+2025-06-26 13:45:21,692 - INFO - ----------------------------------------------- Painel Emendas - Pernambuco -----------------------------------------------
+2025-06-26 13:45:21,693 - INFO - Inicializando driver para navegador: firefox
+2025-06-26 13:45:21,693 - INFO - ====== WebDriver manager ======
+2025-06-26 13:45:22,764 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 13:45:23,227 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 13:45:23,525 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0\geckodriver.exe] found in cache
+2025-06-26 13:45:28,478 - INFO - Driver Firefox inicializado com sucesso
+2025-06-26 13:45:35,179 - INFO - UF Beneficiária...
+2025-06-26 13:45:45,556 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-26 13:45:45,556 - INFO - Tentativa 2. Tentando novamente em 5 segundos...
+2025-06-26 13:45:53,207 - INFO - Driver encerrado.
+2025-06-26 13:45:53,208 - INFO - ----------------------------------------------- Painel Emendas - Pernambuco -----------------------------------------------
+2025-06-26 13:45:53,208 - INFO - Inicializando driver para navegador: firefox
+2025-06-26 13:45:53,208 - INFO - ====== WebDriver manager ======
+2025-06-26 14:25:37,396 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 14:25:37,399 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 14:25:37,399 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 14:25:37,400 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 14:25:37,400 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 14:58:42,101 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 14:58:42,103 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 14:58:42,103 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 14:58:42,104 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 14:58:42,104 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 15:10:12,202 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 15:10:12,204 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 15:10:12,205 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 15:10:12,205 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 15:10:12,206 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 15:10:12,206 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-26 15:10:12,206 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-26 15:10:12,206 - INFO - Inicializando driver para navegador: firefox
+2025-06-26 15:10:12,206 - INFO - ====== WebDriver manager ======
+2025-06-26 15:10:14,525 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:10:15,128 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:10:15,429 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0\geckodriver.exe] found in cache
+2025-06-26 15:10:22,393 - INFO - Driver Firefox inicializado com sucesso
+2025-06-26 15:10:41,207 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-26 15:10:41,207 - INFO - Tentativa 1. Tentando novamente em 5 segundos...
+2025-06-26 15:10:49,194 - INFO - Driver encerrado.
+2025-06-26 15:10:49,194 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-26 15:10:49,195 - INFO - Inicializando driver para navegador: firefox
+2025-06-26 15:10:49,195 - INFO - ====== WebDriver manager ======
+2025-06-26 15:10:50,853 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:10:51,154 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:10:51,463 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0\geckodriver.exe] found in cache
+2025-06-26 15:10:56,904 - INFO - Driver Firefox inicializado com sucesso
+2025-06-26 15:11:32,807 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-26 15:11:32,807 - INFO - Tentativa 2. Tentando novamente em 5 segundos...
+2025-06-26 15:11:40,536 - INFO - Driver encerrado.
+2025-06-26 15:11:40,536 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-26 15:11:40,537 - INFO - Inicializando driver para navegador: firefox
+2025-06-26 15:11:40,537 - INFO - ====== WebDriver manager ======
+2025-06-26 15:11:43,323 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:11:43,675 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:11:43,983 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0\geckodriver.exe] found in cache
+2025-06-26 15:11:49,221 - INFO - Driver Firefox inicializado com sucesso
+2025-06-26 15:12:02,540 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-26 15:12:02,540 - INFO - Tentativa 3. Tentando novamente em 5 segundos...
+2025-06-26 15:12:11,018 - INFO - Driver encerrado.
+2025-06-26 15:12:11,018 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-26 15:12:11,019 - INFO - Inicializando driver para navegador: firefox
+2025-06-26 15:12:11,020 - INFO - ====== WebDriver manager ======
+2025-06-26 15:12:12,375 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:12:12,837 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:12:13,149 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0\geckodriver.exe] found in cache
+2025-06-26 15:12:17,692 - INFO - Driver Firefox inicializado com sucesso
+2025-06-26 15:12:32,696 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-26 15:12:32,696 - INFO - Tentativa 4. Tentando novamente em 5 segundos...
+2025-06-26 15:12:40,397 - INFO - Driver encerrado.
+2025-06-26 15:12:40,397 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-26 15:12:40,398 - INFO - Inicializando driver para navegador: firefox
+2025-06-26 15:12:40,398 - INFO - ====== WebDriver manager ======
+2025-06-26 15:12:41,512 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:12:41,984 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:12:42,280 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0\geckodriver.exe] found in cache
+2025-06-26 15:12:47,789 - INFO - Driver Firefox inicializado com sucesso
+2025-06-26 15:13:03,039 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-26 15:13:03,039 - INFO - Tentativa 5. Tentando novamente em 5 segundos...
+2025-06-26 15:13:12,619 - INFO - Driver encerrado.
+2025-06-26 15:13:12,619 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-26 15:13:12,620 - INFO - Inicializando driver para navegador: firefox
+2025-06-26 15:13:12,620 - INFO - ====== WebDriver manager ======
+2025-06-26 15:13:14,290 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:13:14,656 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:13:14,952 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0\geckodriver.exe] found in cache
+2025-06-26 15:13:20,152 - INFO - Driver Firefox inicializado com sucesso
+2025-06-26 15:13:35,154 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-26 15:13:35,154 - INFO - Tentativa 6. Tentando novamente em 5 segundos...
+2025-06-26 15:13:42,725 - INFO - Driver encerrado.
+2025-06-26 15:13:42,725 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-26 15:13:42,725 - INFO - Inicializando driver para navegador: firefox
+2025-06-26 15:13:42,726 - INFO - ====== WebDriver manager ======
+2025-06-26 15:13:43,695 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:13:44,004 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-26 15:13:44,326 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0\geckodriver.exe] found in cache
+2025-06-26 15:13:48,807 - INFO - Driver Firefox inicializado com sucesso

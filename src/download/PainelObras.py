@@ -39,7 +39,7 @@ class PainelObras(BaseDownloader):
                 initial_files = set(os.listdir(self.download_dir))
 
                 driver = self.get_driver(browser)
-                driver.get("https://qlik-publico.paineis.gov.br/extensions/obras/obras.html")
+                driver.get("https://dd-publico.serpro.gov.br/extensions/obras/obras.html")
 
                 # ATENÇÃO: Seletor do painel pode ter mudado!
                 # Antes: 'text[data-label="PE"]'
