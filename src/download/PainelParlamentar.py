@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from .BaseDownloader import BaseDownloader
-
+# TESTAR / AJUSTAR ELEMENTOS DE XPATH E CSS SELECTOR SE NECESSÁRIO
 class PainelParlamentar(BaseDownloader):
 
     def __init__(self, geckoDriver=None, retry_delay=5):
