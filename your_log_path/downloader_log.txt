@@ -185,3 +185,455 @@ element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
 2025-06-26 15:13:44,004 - INFO - Get LATEST geckodriver version for 114.0 firefox
 2025-06-26 15:13:44,326 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0\geckodriver.exe] found in cache
 2025-06-26 15:13:48,807 - INFO - Driver Firefox inicializado com sucesso
+2025-06-27 14:41:16,313 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-27 14:41:16,315 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-27 14:41:16,316 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-27 14:41:16,316 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-27 14:41:16,317 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-27 14:41:16,317 - INFO - Inicializado com download_dir: BASE_DIR/downloads, final_dir: BASE_DIR/outputs, log_dir: your_log_path
+2025-06-27 14:41:16,317 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-27 14:41:16,318 - INFO - Inicializando driver para navegador: firefox
+2025-06-27 14:41:16,318 - INFO - ====== WebDriver manager ======
+2025-06-27 14:41:17,502 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-27 14:41:18,322 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-27 14:41:18,762 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-27 14:41:19,173 - INFO - Getting latest mozilla release info for v0.36.0
+2025-06-27 14:41:19,769 - INFO - About to download new driver from https://github.com/mozilla/geckodriver/releases/download/v0.36.0/geckodriver-v0.36.0-win64.zip
+2025-06-27 14:41:24,207 - INFO - Driver downloading response is 200
+2025-06-27 14:41:28,483 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-27 14:41:28,872 - INFO - Driver has been saved in cache [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0]
+2025-06-27 14:41:35,309 - INFO - Driver Firefox inicializado com sucesso
+2025-06-27 14:41:57,180 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-27 14:41:59,897 - INFO - Driver encerrado.
+2025-06-27 14:41:59,897 - ERROR - Tentativa 1 com firefox falhou. Erro: TimeoutException: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-27 14:41:59,897 - INFO - Tentando novamente com firefox em 5 segundos...
+2025-06-27 14:42:04,906 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-27 14:42:04,907 - INFO - Inicializando driver para navegador: firefox
+2025-06-27 14:42:04,907 - INFO - ====== WebDriver manager ======
+2025-06-27 14:42:06,370 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-27 14:42:06,970 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-27 14:42:07,334 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0\geckodriver.exe] found in cache
+2025-06-27 14:42:12,037 - INFO - Driver Firefox inicializado com sucesso
+2025-06-27 14:42:40,417 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-27 14:42:43,153 - INFO - Driver encerrado.
+2025-06-27 14:42:43,154 - ERROR - Tentativa 2 com firefox falhou. Erro: TimeoutException: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-27 14:42:43,154 - INFO - Tentando novamente com firefox em 5 segundos...
+2025-06-27 14:42:48,166 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-27 14:42:48,167 - INFO - Inicializando driver para navegador: firefox
+2025-06-27 14:42:48,167 - INFO - ====== WebDriver manager ======
+2025-06-27 14:42:49,184 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-27 14:42:49,745 - INFO - Get LATEST geckodriver version for 114.0 firefox
+2025-06-27 14:42:50,090 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\geckodriver\win64\v0.36.0\geckodriver.exe] found in cache
+2025-06-27 14:42:55,427 - INFO - Driver Firefox inicializado com sucesso
+2025-06-27 14:43:10,629 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-27 14:43:13,236 - INFO - Driver encerrado.
+2025-06-27 14:43:13,236 - ERROR - Tentativa 3 com firefox falhou. Erro: TimeoutException: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:183:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:395:5
+element.find/</<@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+2025-06-27 14:43:13,236 - INFO - Todas as tentativas com firefox falharam. Tentando com o próximo navegador...
+2025-06-27 14:43:13,236 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-27 14:43:13,237 - INFO - Inicializando driver para navegador: edge
+2025-06-27 14:43:13,237 - INFO - ====== WebDriver manager ======
+2025-06-27 14:43:14,255 - INFO - Get LATEST edgedriver version for Edge 137.0.3296
+2025-06-27 14:43:18,094 - INFO - Get LATEST edgedriver version for Edge 137.0.3296
+2025-06-27 14:43:18,461 - INFO - There is no [win64] edgedriver "137.0.3296.93" for browser edge "137.0.3296" in cache
+2025-06-27 14:43:18,462 - INFO - Get LATEST edgedriver version for Edge 137.0.3296
+2025-06-27 14:43:18,865 - INFO - About to download new driver from https://msedgedriver.azureedge.net/137.0.3296.93/edgedriver_win64.zip
+2025-06-27 14:43:19,321 - INFO - Driver downloading response is 200
+2025-06-27 14:43:37,761 - INFO - Get LATEST edgedriver version for Edge 137.0.3296
+2025-06-27 14:43:41,556 - INFO - Driver has been saved in cache [C:\Users\luccas.fernandes\.wdm\drivers\edgedriver\win64\137.0.3296.93]
+2025-06-27 14:43:44,538 - INFO - Driver Edge inicializado com sucesso
+2025-06-27 14:44:03,812 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d36c3985+25605]
+	(No symbol) [0x0x7ff6d3613a90]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d3946fca+1962554]
+	(No symbol) [0x0x7ff6d34286c4]
+	(No symbol) [0x0x7ff6d342898b]
+	(No symbol) [0x0x7ff6d3469af7]
+	(No symbol) [0x0x7ff6d3449e8f]
+	(No symbol) [0x0x7ff6d341ea5d]
+	(No symbol) [0x0x7ff6d34675df]
+	(No symbol) [0x0x7ff6d3449bb3]
+	(No symbol) [0x0x7ff6d341df56]
+	(No symbol) [0x0x7ff6d341d463]
+	(No symbol) [0x0x7ff6d341dd83]
+	(No symbol) [0x0x7ff6d351e0fd]
+	(No symbol) [0x0x7ff6d352dd08]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37a8959+265161]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37b0261+296145]
+	(No symbol) [0x0x7ff6d3622231]
+	(No symbol) [0x0x7ff6d361a6d4]
+	(No symbol) [0x0x7ff6d361a823]
+	(No symbol) [0x0x7ff6d360b9f6]
+	BaseThreadInitThunk [0x0x7ffa8781269d+29]
+	RtlUserThreadStart [0x0x7ffa88d0a9f8+40]
+
+2025-06-27 14:44:05,964 - INFO - Driver encerrado.
+2025-06-27 14:44:05,964 - ERROR - Tentativa 1 com edge falhou. Erro: TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d36c3985+25605]
+	(No symbol) [0x0x7ff6d3613a90]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d3946fca+1962554]
+	(No symbol) [0x0x7ff6d34286c4]
+	(No symbol) [0x0x7ff6d342898b]
+	(No symbol) [0x0x7ff6d3469af7]
+	(No symbol) [0x0x7ff6d3449e8f]
+	(No symbol) [0x0x7ff6d341ea5d]
+	(No symbol) [0x0x7ff6d34675df]
+	(No symbol) [0x0x7ff6d3449bb3]
+	(No symbol) [0x0x7ff6d341df56]
+	(No symbol) [0x0x7ff6d341d463]
+	(No symbol) [0x0x7ff6d341dd83]
+	(No symbol) [0x0x7ff6d351e0fd]
+	(No symbol) [0x0x7ff6d352dd08]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37a8959+265161]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37b0261+296145]
+	(No symbol) [0x0x7ff6d3622231]
+	(No symbol) [0x0x7ff6d361a6d4]
+	(No symbol) [0x0x7ff6d361a823]
+	(No symbol) [0x0x7ff6d360b9f6]
+	BaseThreadInitThunk [0x0x7ffa8781269d+29]
+	RtlUserThreadStart [0x0x7ffa88d0a9f8+40]
+
+2025-06-27 14:44:05,965 - INFO - Tentando novamente com edge em 5 segundos...
+2025-06-27 14:44:10,979 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-27 14:44:10,979 - INFO - Inicializando driver para navegador: edge
+2025-06-27 14:44:10,980 - INFO - ====== WebDriver manager ======
+2025-06-27 14:44:12,114 - INFO - Get LATEST edgedriver version for Edge 137.0.3296
+2025-06-27 14:44:15,495 - INFO - Get LATEST edgedriver version for Edge 137.0.3296
+2025-06-27 14:44:16,267 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\edgedriver\win64\137.0.3296.93\msedgedriver.exe] found in cache
+2025-06-27 14:44:17,442 - INFO - Driver Edge inicializado com sucesso
+2025-06-27 14:44:33,701 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d36c3985+25605]
+	(No symbol) [0x0x7ff6d3613a90]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d3946fca+1962554]
+	(No symbol) [0x0x7ff6d34286c4]
+	(No symbol) [0x0x7ff6d342898b]
+	(No symbol) [0x0x7ff6d3469af7]
+	(No symbol) [0x0x7ff6d3449e8f]
+	(No symbol) [0x0x7ff6d341ea5d]
+	(No symbol) [0x0x7ff6d34675df]
+	(No symbol) [0x0x7ff6d3449bb3]
+	(No symbol) [0x0x7ff6d341df56]
+	(No symbol) [0x0x7ff6d341d463]
+	(No symbol) [0x0x7ff6d341dd83]
+	(No symbol) [0x0x7ff6d351e0fd]
+	(No symbol) [0x0x7ff6d352dd08]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37a8959+265161]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37b0261+296145]
+	(No symbol) [0x0x7ff6d3622231]
+	(No symbol) [0x0x7ff6d361a6d4]
+	(No symbol) [0x0x7ff6d361a823]
+	(No symbol) [0x0x7ff6d360b9f6]
+	BaseThreadInitThunk [0x0x7ffa8781269d+29]
+	RtlUserThreadStart [0x0x7ffa88d0a9f8+40]
+
+2025-06-27 14:44:35,886 - INFO - Driver encerrado.
+2025-06-27 14:44:35,886 - ERROR - Tentativa 2 com edge falhou. Erro: TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d36c3985+25605]
+	(No symbol) [0x0x7ff6d3613a90]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d3946fca+1962554]
+	(No symbol) [0x0x7ff6d34286c4]
+	(No symbol) [0x0x7ff6d342898b]
+	(No symbol) [0x0x7ff6d3469af7]
+	(No symbol) [0x0x7ff6d3449e8f]
+	(No symbol) [0x0x7ff6d341ea5d]
+	(No symbol) [0x0x7ff6d34675df]
+	(No symbol) [0x0x7ff6d3449bb3]
+	(No symbol) [0x0x7ff6d341df56]
+	(No symbol) [0x0x7ff6d341d463]
+	(No symbol) [0x0x7ff6d341dd83]
+	(No symbol) [0x0x7ff6d351e0fd]
+	(No symbol) [0x0x7ff6d352dd08]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37a8959+265161]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37b0261+296145]
+	(No symbol) [0x0x7ff6d3622231]
+	(No symbol) [0x0x7ff6d361a6d4]
+	(No symbol) [0x0x7ff6d361a823]
+	(No symbol) [0x0x7ff6d360b9f6]
+	BaseThreadInitThunk [0x0x7ffa8781269d+29]
+	RtlUserThreadStart [0x0x7ffa88d0a9f8+40]
+
+2025-06-27 14:44:35,886 - INFO - Tentando novamente com edge em 5 segundos...
+2025-06-27 14:44:40,892 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-27 14:44:40,892 - INFO - Inicializando driver para navegador: edge
+2025-06-27 14:44:40,893 - INFO - ====== WebDriver manager ======
+2025-06-27 14:44:41,928 - INFO - Get LATEST edgedriver version for Edge 137.0.3296
+2025-06-27 14:44:45,314 - INFO - Get LATEST edgedriver version for Edge 137.0.3296
+2025-06-27 14:44:45,701 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\edgedriver\win64\137.0.3296.93\msedgedriver.exe] found in cache
+2025-06-27 14:44:46,884 - INFO - Driver Edge inicializado com sucesso
+2025-06-27 14:45:03,231 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d36c3985+25605]
+	(No symbol) [0x0x7ff6d3613a90]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d3946fca+1962554]
+	(No symbol) [0x0x7ff6d34286c4]
+	(No symbol) [0x0x7ff6d342898b]
+	(No symbol) [0x0x7ff6d3469af7]
+	(No symbol) [0x0x7ff6d3449e8f]
+	(No symbol) [0x0x7ff6d341ea5d]
+	(No symbol) [0x0x7ff6d34675df]
+	(No symbol) [0x0x7ff6d3449bb3]
+	(No symbol) [0x0x7ff6d341df56]
+	(No symbol) [0x0x7ff6d341d463]
+	(No symbol) [0x0x7ff6d341dd83]
+	(No symbol) [0x0x7ff6d351e0fd]
+	(No symbol) [0x0x7ff6d352dd08]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37a8959+265161]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37b0261+296145]
+	(No symbol) [0x0x7ff6d3622231]
+	(No symbol) [0x0x7ff6d361a6d4]
+	(No symbol) [0x0x7ff6d361a823]
+	(No symbol) [0x0x7ff6d360b9f6]
+	BaseThreadInitThunk [0x0x7ffa8781269d+29]
+	RtlUserThreadStart [0x0x7ffa88d0a9f8+40]
+
+2025-06-27 14:45:05,389 - INFO - Driver encerrado.
+2025-06-27 14:45:05,389 - ERROR - Tentativa 3 com edge falhou. Erro: TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d36c3985+25605]
+	(No symbol) [0x0x7ff6d3613a90]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d3946fca+1962554]
+	(No symbol) [0x0x7ff6d34286c4]
+	(No symbol) [0x0x7ff6d342898b]
+	(No symbol) [0x0x7ff6d3469af7]
+	(No symbol) [0x0x7ff6d3449e8f]
+	(No symbol) [0x0x7ff6d341ea5d]
+	(No symbol) [0x0x7ff6d34675df]
+	(No symbol) [0x0x7ff6d3449bb3]
+	(No symbol) [0x0x7ff6d341df56]
+	(No symbol) [0x0x7ff6d341d463]
+	(No symbol) [0x0x7ff6d341dd83]
+	(No symbol) [0x0x7ff6d351e0fd]
+	(No symbol) [0x0x7ff6d352dd08]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37a8959+265161]
+	Microsoft::Applications::Events::EventProperty::to_string [0x0x7ff6d37b0261+296145]
+	(No symbol) [0x0x7ff6d3622231]
+	(No symbol) [0x0x7ff6d361a6d4]
+	(No symbol) [0x0x7ff6d361a823]
+	(No symbol) [0x0x7ff6d360b9f6]
+	BaseThreadInitThunk [0x0x7ffa8781269d+29]
+	RtlUserThreadStart [0x0x7ffa88d0a9f8+40]
+
+2025-06-27 14:45:05,390 - INFO - Todas as tentativas com edge falharam. Tentando com o próximo navegador...
+2025-06-27 14:45:05,390 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-27 14:45:05,391 - INFO - Inicializando driver para navegador: chrome
+2025-06-27 14:45:05,391 - INFO - ====== WebDriver manager ======
+2025-06-27 14:45:06,344 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-27 14:45:09,835 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-27 14:45:10,154 - INFO - There is no [win64] chromedriver "137.0.7151.119" for browser google-chrome "137.0.7151" in cache
+2025-06-27 14:45:10,155 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-27 14:45:10,893 - INFO - WebDriver version 137.0.7151.119 selected
+2025-06-27 14:45:10,898 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/win32/chromedriver-win32.zip
+2025-06-27 14:45:10,899 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/win32/chromedriver-win32.zip
+2025-06-27 14:45:11,440 - INFO - Driver downloading response is 200
+2025-06-27 14:45:19,892 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-27 14:45:20,309 - INFO - Driver has been saved in cache [C:\Users\luccas.fernandes\.wdm\drivers\chromedriver\win64\137.0.7151.119]
+2025-06-27 14:45:23,059 - INFO - Driver Chrome inicializado com sucesso
+2025-06-27 14:45:44,376 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7e3b03+62899]
+	GetHandleVerifier [0x0x7e3b44+62964]
+	(No symbol) [0x0x6110f3]
+	(No symbol) [0x0x65980e]
+	(No symbol) [0x0x659bab]
+	(No symbol) [0x0x6a25c2]
+	(No symbol) [0x0x67e554]
+	(No symbol) [0x0x69fd81]
+	(No symbol) [0x0x67e306]
+	(No symbol) [0x0x64d670]
+	(No symbol) [0x0x64e4e4]
+	GetHandleVerifier [0x0xa44793+2556483]
+	GetHandleVerifier [0x0xa3fd02+2537394]
+	GetHandleVerifier [0x0x80a2fa+220586]
+	GetHandleVerifier [0x0x7faae8+157080]
+	GetHandleVerifier [0x0x80141d+184013]
+	GetHandleVerifier [0x0x7eba68+95512]
+	GetHandleVerifier [0x0x7ebc10+95936]
+	GetHandleVerifier [0x0x7d6b5a+9738]
+	BaseThreadInitThunk [0x0x76457d49+25]
+	RtlInitializeExceptionChain [0x0x7761b74b+107]
+	RtlClearBits [0x0x7761b6cf+191]
+
+2025-06-27 14:45:46,539 - INFO - Driver encerrado.
+2025-06-27 14:45:46,539 - ERROR - Tentativa 1 com chrome falhou. Erro: TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7e3b03+62899]
+	GetHandleVerifier [0x0x7e3b44+62964]
+	(No symbol) [0x0x6110f3]
+	(No symbol) [0x0x65980e]
+	(No symbol) [0x0x659bab]
+	(No symbol) [0x0x6a25c2]
+	(No symbol) [0x0x67e554]
+	(No symbol) [0x0x69fd81]
+	(No symbol) [0x0x67e306]
+	(No symbol) [0x0x64d670]
+	(No symbol) [0x0x64e4e4]
+	GetHandleVerifier [0x0xa44793+2556483]
+	GetHandleVerifier [0x0xa3fd02+2537394]
+	GetHandleVerifier [0x0x80a2fa+220586]
+	GetHandleVerifier [0x0x7faae8+157080]
+	GetHandleVerifier [0x0x80141d+184013]
+	GetHandleVerifier [0x0x7eba68+95512]
+	GetHandleVerifier [0x0x7ebc10+95936]
+	GetHandleVerifier [0x0x7d6b5a+9738]
+	BaseThreadInitThunk [0x0x76457d49+25]
+	RtlInitializeExceptionChain [0x0x7761b74b+107]
+	RtlClearBits [0x0x7761b6cf+191]
+
+2025-06-27 14:45:46,540 - INFO - Tentando novamente com chrome em 5 segundos...
+2025-06-27 14:45:51,551 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-27 14:45:51,551 - INFO - Inicializando driver para navegador: chrome
+2025-06-27 14:45:51,552 - INFO - ====== WebDriver manager ======
+2025-06-27 14:45:52,498 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-27 14:45:55,808 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-27 14:45:56,099 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-06-27 14:45:57,170 - INFO - Driver Chrome inicializado com sucesso
+2025-06-27 14:46:13,326 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7e3b03+62899]
+	GetHandleVerifier [0x0x7e3b44+62964]
+	(No symbol) [0x0x6110f3]
+	(No symbol) [0x0x65980e]
+	(No symbol) [0x0x659bab]
+	(No symbol) [0x0x6a25c2]
+	(No symbol) [0x0x67e554]
+	(No symbol) [0x0x69fd81]
+	(No symbol) [0x0x67e306]
+	(No symbol) [0x0x64d670]
+	(No symbol) [0x0x64e4e4]
+	GetHandleVerifier [0x0xa44793+2556483]
+	GetHandleVerifier [0x0xa3fd02+2537394]
+	GetHandleVerifier [0x0x80a2fa+220586]
+	GetHandleVerifier [0x0x7faae8+157080]
+	GetHandleVerifier [0x0x80141d+184013]
+	GetHandleVerifier [0x0x7eba68+95512]
+	GetHandleVerifier [0x0x7ebc10+95936]
+	GetHandleVerifier [0x0x7d6b5a+9738]
+	BaseThreadInitThunk [0x0x76457d49+25]
+	RtlInitializeExceptionChain [0x0x7761b74b+107]
+	RtlClearBits [0x0x7761b6cf+191]
+
+2025-06-27 14:46:15,477 - INFO - Driver encerrado.
+2025-06-27 14:46:15,477 - ERROR - Tentativa 2 com chrome falhou. Erro: TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7e3b03+62899]
+	GetHandleVerifier [0x0x7e3b44+62964]
+	(No symbol) [0x0x6110f3]
+	(No symbol) [0x0x65980e]
+	(No symbol) [0x0x659bab]
+	(No symbol) [0x0x6a25c2]
+	(No symbol) [0x0x67e554]
+	(No symbol) [0x0x69fd81]
+	(No symbol) [0x0x67e306]
+	(No symbol) [0x0x64d670]
+	(No symbol) [0x0x64e4e4]
+	GetHandleVerifier [0x0xa44793+2556483]
+	GetHandleVerifier [0x0xa3fd02+2537394]
+	GetHandleVerifier [0x0x80a2fa+220586]
+	GetHandleVerifier [0x0x7faae8+157080]
+	GetHandleVerifier [0x0x80141d+184013]
+	GetHandleVerifier [0x0x7eba68+95512]
+	GetHandleVerifier [0x0x7ebc10+95936]
+	GetHandleVerifier [0x0x7d6b5a+9738]
+	BaseThreadInitThunk [0x0x76457d49+25]
+	RtlInitializeExceptionChain [0x0x7761b74b+107]
+	RtlClearBits [0x0x7761b6cf+191]
+
+2025-06-27 14:46:15,477 - INFO - Tentando novamente com chrome em 5 segundos...
+2025-06-27 14:46:20,485 - INFO - --------------------------------------------- Painel Parlamentar - Pernambuco ---------------------------------------------
+2025-06-27 14:46:20,485 - INFO - Inicializando driver para navegador: chrome
+2025-06-27 14:46:20,486 - INFO - ====== WebDriver manager ======
+2025-06-27 14:46:21,415 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-27 14:46:24,717 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-27 14:46:25,021 - INFO - Driver [C:\Users\luccas.fernandes\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-06-27 14:46:26,076 - INFO - Driver Chrome inicializado com sucesso
+2025-06-27 14:46:45,284 - ERROR - Erro durante a execução: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7e3b03+62899]
+	GetHandleVerifier [0x0x7e3b44+62964]
+	(No symbol) [0x0x6110f3]
+	(No symbol) [0x0x65980e]
+	(No symbol) [0x0x659bab]
+	(No symbol) [0x0x6a25c2]
+	(No symbol) [0x0x67e554]
+	(No symbol) [0x0x69fd81]
+	(No symbol) [0x0x67e306]
+	(No symbol) [0x0x64d670]
+	(No symbol) [0x0x64e4e4]
+	GetHandleVerifier [0x0xa44793+2556483]
+	GetHandleVerifier [0x0xa3fd02+2537394]
+	GetHandleVerifier [0x0x80a2fa+220586]
+	GetHandleVerifier [0x0x7faae8+157080]
+	GetHandleVerifier [0x0x80141d+184013]
+	GetHandleVerifier [0x0x7eba68+95512]
+	GetHandleVerifier [0x0x7ebc10+95936]
+	GetHandleVerifier [0x0x7d6b5a+9738]
+	BaseThreadInitThunk [0x0x76457d49+25]
+	RtlInitializeExceptionChain [0x0x7761b74b+107]
+	RtlClearBits [0x0x7761b6cf+191]
+
+2025-06-27 14:46:47,426 - INFO - Driver encerrado.
+2025-06-27 14:46:47,426 - ERROR - Tentativa 3 com chrome falhou. Erro: TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7e3b03+62899]
+	GetHandleVerifier [0x0x7e3b44+62964]
+	(No symbol) [0x0x6110f3]
+	(No symbol) [0x0x65980e]
+	(No symbol) [0x0x659bab]
+	(No symbol) [0x0x6a25c2]
+	(No symbol) [0x0x67e554]
+	(No symbol) [0x0x69fd81]
+	(No symbol) [0x0x67e306]
+	(No symbol) [0x0x64d670]
+	(No symbol) [0x0x64e4e4]
+	GetHandleVerifier [0x0xa44793+2556483]
+	GetHandleVerifier [0x0xa3fd02+2537394]
+	GetHandleVerifier [0x0x80a2fa+220586]
+	GetHandleVerifier [0x0x7faae8+157080]
+	GetHandleVerifier [0x0x80141d+184013]
+	GetHandleVerifier [0x0x7eba68+95512]
+	GetHandleVerifier [0x0x7ebc10+95936]
+	GetHandleVerifier [0x0x7d6b5a+9738]
+	BaseThreadInitThunk [0x0x76457d49+25]
+	RtlInitializeExceptionChain [0x0x7761b74b+107]
+	RtlClearBits [0x0x7761b6cf+191]
+
+2025-06-27 14:46:47,427 - ERROR - Todas as tentativas com todos os navegadores falharam.
