@@ -32,6 +32,8 @@ class PainelParlamentar(BaseDownloader):
             current_files = set(os.listdir(self.download_dir))
             new_files = current_files - initial_files
 
+            self.log_info(self.download_dir)
+
             temp_files = [
                 file for file in new_files
                 if any(file.endswith(ext) for ext in TEMPORARY_EXTENSIONS)
@@ -81,7 +83,7 @@ class PainelParlamentar(BaseDownloader):
         try:
             driver.get("https://dd-publico.serpro.gov.br/extensions/parlamentar/parlamentar.html")
 
-            WebDriverWait(driver, 10).until(
+            WebDriverWait(driver, 60).until(
                 EC.visibility_of_element_located((By.CSS_SELECTOR, "#sCBrmk_content > div > div > div > div > div > div > div > div > div.MuiGrid-root.MuiGrid-container.css-q0qbej > h6"))
             )
 
@@ -106,7 +108,7 @@ class PainelParlamentar(BaseDownloader):
 
             first_html_before = self._get_element_html(driver, xpath_first_graph_elemento)
             second_html_before = self._get_element_html(driver, xpath_second_graph_elemento)
-            uf_beneficiario = driver.find_element(By.CSS_SELECTOR, 'body > div.MuiPopover-root.listbox-popover.MuiModal-root.css-1nac088 > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1dmzujt > div > div > div.njs-e6be-Grid-root.njs-e6be-Grid-container.njs-e6be-Grid-item.njs-e6be-Grid-direction-xs-column.css-81e1gf > div.njs-e6be-Grid-root.njs-e6be-Grid-item.css-bb28t2 > div > input')
+            uf_beneficiario = driver.find_element(By.CSS_SELECTOR, 'html.touch-off body div.MuiPopover-root.listbox-popover.MuiModal-root.css-1nac088 div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1dmzujt div.MuiBox-root.css-1yedahq div.njs-8934-Grid-root.njs-8934-Grid-container.njs-8934-Grid-direction-xs-column.listbox-container.css-qhz7xe div.njs-8934-Grid-root.njs-8934-Grid-container.njs-8934-Grid-item.njs-8934-Grid-direction-xs-column.css-otmy2t div.njs-8934-Grid-root.njs-8934-Grid-item.css-bb28t2 div.njs-8934-InputBase-root.njs-8934-OutlinedInput-root.njs-8934-InputBase-colorPrimary.njs-8934-InputBase-fullWidth.njs-8934-InputBase-sizeSmall.njs-8934-InputBase-adornedStart.search.css-bmdvkn input.njs-8934-InputBase-input.njs-8934-OutlinedInput-input.njs-8934-InputBase-inputSizeSmall.njs-8934-InputBase-inputAdornedStart.css-1vwxklj')
             uf_beneficiario.click()
             uf_beneficiario.send_keys("PE")
             uf_beneficiario.send_keys(Keys.RETURN)
@@ -119,11 +121,11 @@ class PainelParlamentar(BaseDownloader):
                 second_html_after = self._get_element_html(driver, xpath_second_graph_elemento)
 
             time.sleep(2)
-            ok_button_uf_beneficiario = driver.find_element(By.CSS_SELECTOR, '#actions-toolbar > div.njs-e6be-Grid-root.njs-e6be-Grid-container.njs-e6be-Grid-item.njs-e6be-Grid-wrap-xs-nowrap.actions-toolbar-default-actions.css-3cuy5k > div:nth-child(3) > button')
+            ok_button_uf_beneficiario = driver.find_element(By.CSS_SELECTOR, '.actions-toolbar-confirm')
             ok_button_uf_beneficiario.click()
 
             # Natureza Jurídica
-            self.log_info("Natureza Jurídica...")
+            """self.log_info("Natureza Jurídica...")
 
             seletor_natureza_juridica = driver.find_element(By.CSS_SELECTOR, '#pfmQYV_content > div > div')
             WebDriverWait(driver, 10).until(
@@ -133,8 +135,9 @@ class PainelParlamentar(BaseDownloader):
 
             first_html_before = self._get_element_html(driver, xpath_first_graph_elemento)
             second_html_before = self._get_element_html(driver, xpath_second_graph_elemento)
-            adm_publico_estadual = driver.find_element(By.CSS_SELECTOR, 'body > div.MuiPopover-root.listbox-popover.MuiModal-root.css-1nac088 > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1dmzujt > div > div > div.njs-e6be-Grid-root.njs-e6be-Grid-container.njs-e6be-Grid-item.njs-e6be-Grid-direction-xs-column.css-81e1gf > div.njs-e6be-Grid-root.njs-e6be-Grid-item.css-bb28t2 > div > input')
+            adm_publico_estadual = driver.find_element(By.CSS_SELECTOR, 'html.touch-off body div.MuiPopover-root.listbox-popover.MuiModal-root.css-1nac088 div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1dmzujt div.MuiBox-root.css-1yedahq div.njs-8934-Grid-root.njs-8934-Grid-container.njs-8934-Grid-direction-xs-column.listbox-container.css-qhz7xe div.njs-8934-Grid-root.njs-8934-Grid-container.njs-8934-Grid-item.njs-8934-Grid-direction-xs-column.css-otmy2t div.njs-8934-Grid-root.njs-8934-Grid-item.css-bb28t2 div.njs-8934-InputBase-root.njs-8934-OutlinedInput-root.njs-8934-InputBase-colorPrimary.njs-8934-InputBase-fullWidth.njs-8934-InputBase-sizeSmall.njs-8934-InputBase-adornedStart.search.css-bmdvkn input.njs-8934-InputBase-input.njs-8934-OutlinedInput-input.njs-8934-InputBase-inputSizeSmall.njs-8934-InputBase-inputAdornedStart.css-1vwxklj')
             adm_publico_estadual.click()
+            print(f"Elemento encontrado: {adm_publico_estadual.text}")
             adm_publico_estadual.send_keys("ou do Distrito")
             adm_publico_estadual.send_keys(Keys.RETURN)
             first_html_after = self._get_element_html(driver, xpath_first_graph_elemento)
@@ -157,8 +160,8 @@ class PainelParlamentar(BaseDownloader):
                 first_html_after = self._get_element_html(driver, xpath_first_graph_elemento)
                 second_html_after = self._get_element_html(driver, xpath_second_graph_elemento)
 
-            ok_button_natureza_juridica = driver.find_element(By.CSS_SELECTOR, '#actions-toolbar > div.njs-e6be-Grid-root.njs-e6be-Grid-container.njs-e6be-Grid-item.njs-e6be-Grid-wrap-xs-nowrap.actions-toolbar-default-actions.css-3cuy5k > div:nth-child(3) > button')
-            ok_button_natureza_juridica.click()
+            ok_button_natureza_juridica = driver.find_element(By.CSS_SELECTOR, '.actions-toolbar-confirm')
+            ok_button_natureza_juridica.click()"""
 
             # Modalidade
             self.log_info("Modalidade...")
@@ -198,11 +201,11 @@ class PainelParlamentar(BaseDownloader):
                     if len(elementos_a_selecionar) == 0:
                         break
 
-            xpath_table_elemento = '//*[@id="myTabContent"]'
-            html_table_before = self._get_element_html(driver, xpath_table_elemento)
-
-            ok_button_modalidade = driver.find_element(By.CSS_SELECTOR, '#actions-toolbar > div.njs-e6be-Grid-root.njs-e6be-Grid-container.njs-e6be-Grid-item.njs-e6be-Grid-wrap-xs-nowrap.actions-toolbar-default-actions.css-3cuy5k > div:nth-child(3) > button')
+            ok_button_modalidade = driver.find_element(By.CSS_SELECTOR, '.actions-toolbar-confirm')
             ok_button_modalidade.click()
+
+            xpath_table_elemento = "/html/body/div[2]/div[3]/div[2]/div[6]/div/div/div[1]/div/div"
+            html_table_before = self._get_element_html(driver, xpath_table_elemento)
 
             initial_files = set(os.listdir(self.download_dir))
 
@@ -217,11 +220,13 @@ class PainelParlamentar(BaseDownloader):
             download_database_button.click()
             self.log_info("Download iniciado...")
 
-            time.sleep(5)
+            time.sleep(10)
             downloaded_file = self._wait_for_download_to_complete(initial_files=initial_files)
             self.log_info(f"Arquivo detectado: {downloaded_file}")
 
             file_path = os.path.join(self.download_dir, str(next(iter(downloaded_file))))
+
+            self.log_info(f"Arquivo baixado: {file_path}")
 
             new_filename = "Emendas.xlsx"
             final_path = os.path.join(self.final_dir, new_filename)
