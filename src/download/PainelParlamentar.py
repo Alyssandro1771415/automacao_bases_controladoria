@@ -125,7 +125,7 @@ class PainelParlamentar(BaseDownloader):
             ok_button_uf_beneficiario.click()
 
             # Natureza Jurídica
-            """self.log_info("Natureza Jurídica...")
+            self.log_info("Natureza Jurídica...")
 
             seletor_natureza_juridica = driver.find_element(By.CSS_SELECTOR, '#pfmQYV_content > div > div')
             WebDriverWait(driver, 10).until(
@@ -161,7 +161,7 @@ class PainelParlamentar(BaseDownloader):
                 second_html_after = self._get_element_html(driver, xpath_second_graph_elemento)
 
             ok_button_natureza_juridica = driver.find_element(By.CSS_SELECTOR, '.actions-toolbar-confirm')
-            ok_button_natureza_juridica.click()"""
+            ok_button_natureza_juridica.click()
 
             # Modalidade
             self.log_info("Modalidade...")
