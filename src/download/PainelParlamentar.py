@@ -8,7 +8,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from .BaseDownloader import BaseDownloader
-# TESTAR / AJUSTAR ELEMENTOS DE XPATH E CSS SELECTOR SE NECESSÁRIO
+import pandas as pd
+
 class PainelParlamentar(BaseDownloader):
 
     def __init__(self, geckoDriver=None, retry_delay=5):
@@ -71,9 +72,16 @@ class PainelParlamentar(BaseDownloader):
         hash1 = hashlib.md5(html1.encode('utf-8')).hexdigest()
         hash2 = hashlib.md5(html2.encode('utf-8')).hexdigest()
         return hash1 == hash2
+    
+    def parlamentar_filter(self, df: pd.DataFrame) -> pd.DataFrame:
+        for index, row in df.iterrows():
+            if row["Situação do Convênio"] in ["Convênio Anulado", "Convênio Rescindido", "Prestação de Contas Aprovada", "Prestação de Contas Aprovada com Ressalvas", "Prestação de Contas Concluída"]:
+                df.drop(index, inplace=True)
+        df.reset_index(drop=True, inplace=True)
+        return df
 
     @BaseDownloader.retry(max_attempts=3, delay=5)
-    def download(self, browser="firefox"):
+    def download(self, browser="firefox", Emendas=False):
         title = "Painel Parlamentar - Pernambuco"
         self.log_info(f"{'-'*(60-(len(title)//2))} {title} {'-'*(60-(len(title)//2))}")
 
@@ -137,7 +145,6 @@ class PainelParlamentar(BaseDownloader):
             second_html_before = self._get_element_html(driver, xpath_second_graph_elemento)
             adm_publico_estadual = driver.find_element(By.CSS_SELECTOR, 'html.touch-off body div.MuiPopover-root.listbox-popover.MuiModal-root.css-1nac088 div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1dmzujt div.MuiBox-root.css-1yedahq div.njs-8934-Grid-root.njs-8934-Grid-container.njs-8934-Grid-direction-xs-column.listbox-container.css-qhz7xe div.njs-8934-Grid-root.njs-8934-Grid-container.njs-8934-Grid-item.njs-8934-Grid-direction-xs-column.css-otmy2t div.njs-8934-Grid-root.njs-8934-Grid-item.css-bb28t2 div.njs-8934-InputBase-root.njs-8934-OutlinedInput-root.njs-8934-InputBase-colorPrimary.njs-8934-InputBase-fullWidth.njs-8934-InputBase-sizeSmall.njs-8934-InputBase-adornedStart.search.css-bmdvkn input.njs-8934-InputBase-input.njs-8934-OutlinedInput-input.njs-8934-InputBase-inputSizeSmall.njs-8934-InputBase-inputAdornedStart.css-1vwxklj')
             adm_publico_estadual.click()
-            print(f"Elemento encontrado: {adm_publico_estadual.text}")
             adm_publico_estadual.send_keys("ou do Distrito")
             adm_publico_estadual.send_keys(Keys.RETURN)
             first_html_after = self._get_element_html(driver, xpath_first_graph_elemento)
@@ -166,11 +173,15 @@ class PainelParlamentar(BaseDownloader):
             # Modalidade
             self.log_info("Modalidade...")
 
-            seletor_modaliade = driver.find_element(By.CSS_SELECTOR, '#gPGwwUJ_content > div > div')
+            seletor_modaliade = driver.find_element(By.CSS_SELECTOR, '.qv-object-gPGwwUJ > div:nth-child(1) > div:nth-child(4)')
             seletor_modaliade.click()
             time.sleep(10)
 
             elementos_a_selecionar = ["CONVENIO", "CONTRATO DE REPASSE", "CONVENIO OU CONTRATO DE REPASSE", "TERMO DE COMPROMISSO"]
+
+            if Emendas:
+                elementos_a_selecionar.append("ESPECIAL")
+
             all_elements = [
                 "div.RowColumn-barContainer:nth-child(1)",
                 "div.RowColumn-barContainer:nth-child(2)",
@@ -193,7 +204,7 @@ class PainelParlamentar(BaseDownloader):
                     first_html_after = self._get_element_html(driver, xpath_first_graph_elemento)
                     second_html_after = self._get_element_html(driver, xpath_second_graph_elemento)
                     while self._compare_element_html(first_html_before, first_html_after) and self._compare_element_html(second_html_before, second_html_after):
-                        time.sleep(5)
+                        time.sleep(2)
                         first_html_after = self._get_element_html(driver, xpath_first_graph_elemento)
                         second_html_after = self._get_element_html(driver, xpath_second_graph_elemento)
                     elementos_a_selecionar.remove(elemento_atual.text)
@@ -204,14 +215,14 @@ class PainelParlamentar(BaseDownloader):
             ok_button_modalidade = driver.find_element(By.CSS_SELECTOR, '.actions-toolbar-confirm')
             ok_button_modalidade.click()
 
-            xpath_table_elemento = "/html/body/div[2]/div[3]/div[2]/div[6]/div/div/div[1]/div/div"
+            xpath_table_elemento = "/html/body/div[2]/div[3]/div[2]/div[6]"
             html_table_before = self._get_element_html(driver, xpath_table_elemento)
-
-            initial_files = set(os.listdir(self.download_dir))
 
             html_table_after = self._get_element_html(driver, xpath_table_elemento)
 
-            while self._compare_element_html(html_table_before, html_table_after):
+            initial_files = set(os.listdir(self.download_dir))
+
+            while self._compare_element_html(html_table_before, html_table_after) or driver.find_elements(By.CSS_SELECTOR, 'html.touch-off body div.container-fluid.mt-2 div.row.mt-1.mb-3 div.col-sm-12.col-lg.mt-2.px-2 div.row.px-2 div.nav-container.mt-3.w-100 div#myTabContent.tab-content div#ciente.tab-pane.fade.show.active div#tbl-emendas-ciente div.qv-object-wrapper.ng-scope.ng-isolate-scope article.qv-object.qvt-visualization.qv-object-fb9fce22-1e06-4bb6-9ac0-975d5c32e7aa.qv-can-take-snapshot.qv-complete-border.qv-layout-medium.qv-object-table div.qv-inner-object div.cancel-overlay.ng-scope'):
                 self.log_info("Aguardando preparação do arquivo...")
                 html_table_after = self._get_element_html(driver, xpath_table_elemento)
                 time.sleep(5)
@@ -228,13 +239,22 @@ class PainelParlamentar(BaseDownloader):
 
             self.log_info(f"Arquivo baixado: {file_path}")
 
-            new_filename = "Emendas.xlsx"
+            if Emendas:
+                new_filename = "NovaEmendas.xlsx"
+            else:
+                new_filename = "Emendas.xlsx"
             final_path = os.path.join(self.final_dir, new_filename)
 
             self.clean_final_directory()
 
             os.rename(file_path, final_path)
             self.log_info(f"Arquivo renomeado para '{new_filename}' e movido para: {final_path}")
+
+            if Emendas:
+                df = pd.read_excel(final_path)
+                df = self.parlamentar_filter(df)
+                df.to_excel(final_path, index=False)
+                self.log_info("Filtro aplicado e arquivo atualizado.")
 
         except Exception as e:
             self.log_error(f"Erro durante a execução: {e}")
